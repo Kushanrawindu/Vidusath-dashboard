@@ -3,7 +3,7 @@
       {{-- <h3>Dashboard</h3> --}}
       <ul class="nav side-menu">
         <li><a href="/admindashboard"><i class="fa fa-home"></i> Dashboard</a></li>
-        <li><a href="/admin/school"><i class="fa fa-bank"></i> Schools <span class="fa fa-chevron-down"></span></a>
+        <li><a href="/school"><i class="fa fa-bank"></i> Schools <span class="fa fa-chevron-down"></span></a>
           {{-- <ul class="nav child_menu">
             <li><a href="form.html">General Form</a></li>
             <li><a href="form_advanced.html">Advanced Components</a></li>

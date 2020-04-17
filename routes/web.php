@@ -29,9 +29,9 @@ Route::get('/admindashboard', function () {
     return view('admin.adminHome');
 });
 
-Route::get('/admin/school', function () {
-    return view('admin.school.index');
-});
+// Route::get('/admin/school', function () {
+//     return view('admin.school.index');
+// });
 
 Route::get('/admin/subject', function () {
     return view('admin.subjects.index');
@@ -41,10 +41,16 @@ Route::get('/userdashboard', function () {
     return view('user.userHome');
 });
 
-Route::get('/user/classwork', function () {
-    return view('user.classwork.index');
-});
+// Route::get('/user/classwork', function () {
+//     return view('user.classwork.index');
+// });
 
 Route::get('/user/uploads', function () {
     return view('user.upoladedAssignments.index');
 });
+
+// ==========================================================
+
+Route::resource('school', 'SchoolController');
+
+Route::resource('classwork', 'ClassworkController');

@@ -3,7 +3,7 @@
       {{-- <h3>Dashboard</h3> --}}
       <ul class="nav side-menu">
         <li><a href="/userdashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li><a href="/user/classwork"><i class="fa fa-edit"></i> Class Work</a></li>
+        <li><a href="/classwork"><i class="fa fa-edit"></i> Class Work</a></li>
         <li><a href="/user/uploads"><i class="fa fa-upload"></i> Uploaded Assignments</a></li>
         {{-- <li><a><i class="fa fa-edit"></i> Class Work <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
