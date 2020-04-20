@@ -115,17 +115,25 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach ($school as $school)
                         <tr>
-                          <td>1</td>
-                          <td>Kegalle</td>
+                          <th scope="row">{{$school->id}}</th>
+                          <td>{{$school->district}}</td>
                           {{-- <td>Sabaragamuwa</td> --}}
                           {{-- <td>Dehiowita</td> --}}
-                          <td>Rajasingha Central College</td>
-                          <td></td>
+                          <td>{{$school->name}}</td>
+                          <td><form action="{{route('school.destroy', $school->id)}}" method="POST" style="display:inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-xs" >Delete</button>
+                              </form>
+                          </td>
                         </tr>
+                        @endforeach
+                        
                       </tbody>
                     </table>
-         </div>
+                </div>
             </div>
         </div>
     </div>

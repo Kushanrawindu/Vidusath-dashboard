@@ -9,8 +9,11 @@
         <div class="col-md-4 col-sm-2 col-xs-12 form-group pull-right top_search">
         <div class="input-group">
             <button id="compose" class="btn btn-round btn-success" type="button" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-plus"></i> Add New Classwork</button>
+            <form action="{{route('classwork.store')}}" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
             <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
+                    
                     <div class="modal-content">
 
                         <div class="modal-header">
@@ -170,7 +173,51 @@
                     </div>
                 </div>
               </div>
+            </form>
         </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Subject</th>
+                      <th>Class</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th>File</th>
+                      <th>Option</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($classwork as $classwork)
+                    <tr>
+                      <th scope="row">{{$classwork->id}}</th>
+                      <td>{{$classwork->subject}}</td>
+                      <td>{{$classwork->class}}</td>
+                      <td>{{$classwork->date}}</td>
+                      <td>{{$classwork->time}}</td>
+                      <td>{{$classwork->file}}</td>
+                      <td>{{$classwork->option}}</td>
+                      <td><form action="{{route('classwork.destroy', $classwork->id)}}" method="POST" style="display:inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-xs" >Delete</button>
+                          </form>
+                      </td>
+                    </tr>
+                    @endforeach
+                    
+                  </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

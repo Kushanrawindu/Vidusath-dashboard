@@ -36,7 +36,36 @@ class ClassworkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'subject'=>'required',
+            'class'=>'required',
+            'date'=>'required',
+            'time'=>'required',
+            'file'=>'required',
+            'option'=>'required'
+        ]);
+
+        //handle file upload
+        if($request->hasFile('file')){
+            $filenameWithExt = $request->file('file')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('file')->getClientOriginalExtension();
+            $fileNameToStore = $filename . '_' .time().'.'.$extension;
+            $path = $request->file('file')->storeAs('public/image', $fileNameToStore);
+        }
+        else {
+            $fileNameToStore = 'noImage.jpg';
+        }
+
+        $classwork = new Classwork();
+        $classwork->subject = $request->subject;
+        $classwork->class = $request->class;
+        $classwork->date = $request->date;
+        $classwork->time = $request->time;
+        $classwork->file = $request->file;
+        $classwork->option = $request->option;
+        $classwork->save();
+        return redirect(route('classwork.index'));
     }
 
     /**
@@ -81,6 +110,8 @@ class ClassworkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $classwork = Classwork::find($id);
+        $classwork->delete();
+        return redirect(route('classwork.index'))->with('success', 'Successfully Deleted');
     }
 }
