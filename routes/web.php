@@ -37,6 +37,14 @@ Route::get('/admin/subject', function () {
     return view('admin.subjects.index');
 });
 
+Route::get('/admin/regteachers', function () {
+    return view('admin.registeredTeachers.index');
+});
+
+Route::get('/admin/regstudents', function () {
+    return view('admin.registeredStudents.index');
+});
+
 Route::get('/userdashboard', function () {
     return view('user.userHome');
 });
