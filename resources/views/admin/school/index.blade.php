@@ -103,7 +103,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_content">
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                    <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
                           <th>ID</th>
@@ -122,11 +122,13 @@
                           {{-- <td>Sabaragamuwa</td> --}}
                           {{-- <td>Dehiowita</td> --}}
                           <td>{{$school->name}}</td>
-                          <td><form action="{{route('school.destroy', $school->id)}}" method="POST" style="display:inline-block;">
+                          <td style="display:flex">
+                            <a href="{{route('school.edit', $school->id)}}" class="btn btn-warning btn-xs">Edit</a>
+                            <form action="{{route('school.destroy', $school->id)}}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-xs" >Delete</button>
-                              </form>
+                            </form>
                           </td>
                         </tr>
                         @endforeach

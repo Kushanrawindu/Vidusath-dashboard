@@ -16,6 +16,7 @@ class CreateClassworksTable extends Migration
         Schema::create('classworks', function (Blueprint $table) {
             $table->id();
             $table->String('subject');
+            $table->String('grade');
             $table->String('class');
             $table->String('date');
             $table->String('time');

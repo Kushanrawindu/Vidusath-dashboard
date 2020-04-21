@@ -68,7 +68,8 @@ class SchoolController extends Controller
      */
     public function edit($id)
     {
-        //
+        $school = School::find($id);
+        return view('admin.school.index')->with('school', $school);
     }
 
     /**
@@ -80,7 +81,17 @@ class SchoolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'newdistrict'=>'required',
+            'newname'=>'required'
+        ]);
+
+        $school = School::findOrFail($id);
+        $school->district = $request->newdistrict;
+        $school->name = $request->newname;
+        $school->update();
+        
+        return redirect(route('school.index'))->with('success', 'Successfully Updated');
     }
 
     /**

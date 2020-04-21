@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Class</label>
                                     <div class="col-md-9 col-sm-9 col-xs-12">
                                       <select class="select2_group form-control" id="class" name="class">
@@ -118,7 +118,35 @@
                                         </optgroup>
                                       </select>
                                     </div>
-                                  </div>
+                                  </div> --}}
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                      <select class="form-control" id="option" name="option">
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                      </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Class</label>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                      <select class="form-control" id="option" name="option">
+                                        <option>A</option>
+                                        <option>B</option>
+                                        <option>C</option>
+                                        <option>D</option>
+                                        <option>E</option>
+                                        <option>F</option>
+                                      </select>
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Date</label>
@@ -160,6 +188,7 @@
                                       <select class="form-control" id="option" name="option">
                                         <option>Class Work</option>
                                         <option>Home Work</option>
+                                        <option>Assignment</option>
                                       </select>
                                     </div>
                                 </div>
@@ -188,6 +217,7 @@
                     <tr>
                       <th>ID</th>
                       <th>Subject</th>
+                      <th>Grade</th>
                       <th>Class</th>
                       <th>Date</th>
                       <th>Time</th>
@@ -201,6 +231,7 @@
                     <tr>
                       <th scope="row">{{$classwork->id}}</th>
                       <td>{{$classwork->subject}}</td>
+                      <td>{{$classwork->grade}}</td>
                       <td>{{$classwork->class}}</td>
                       <td>{{$classwork->date}}</td>
                       <td>{{$classwork->time}}</td>

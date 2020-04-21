@@ -38,6 +38,7 @@ class ClassworkController extends Controller
     {
         $this->validate($request,[
             'subject'=>'required',
+            'grade'=>'required',
             'class'=>'required',
             'date'=>'required',
             'time'=>'required',
@@ -59,6 +60,7 @@ class ClassworkController extends Controller
 
         $classwork = new Classwork();
         $classwork->subject = $request->subject;
+        $classwork->grade = $request->grade;
         $classwork->class = $request->class;
         $classwork->date = $request->date;
         $classwork->time = $request->time;
