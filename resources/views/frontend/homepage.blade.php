@@ -9,26 +9,24 @@
               <div class="row">
              <div class="col-lg-1"><img class="" src="{{asset('user/img/school%20icon.png')}}" height="100px"></div>
              <div class="col-lg-8" style="padding: 20px"><p style="font-size: 14px;margin-left: 5px">Select your school, then enter the relevant subject and classroom</p>
-                  <div class="dropdown">
-                        <button class="btn btn-light btn-sm dropdown-toggle text-left p-1" type="button" data-toggle="dropdown" style="border-radius: 15px;
-                         width: 250px;font-size: 12px;margin-bottom: 5px">DISTRICT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       </button>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">HTML</a></li>
-                          <li><a href="#">CSS</a></li>
-                          <li><a href="#">JavaScript</a></li>
-                        </ul>
-                      <button class="btn btn-light btn-sm dropdown-toggle text-left" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px">SCHOOL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">HTML</a></li>
-                          <li><a href="#">CSS</a></li>
-                          <li><a href="#">JavaScript</a></li>
-                        </ul>
-                      <button class="btn yellowcol" style="color: #244892!important;border-radius: 15px;width: 100px;font-size: 12px;margin-bottom: 5px">ENTER</button>
-                      </div>
-                  
+                  <div class="dropdown inline">
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                      <option selected="selected">DISTRICT</option>        
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="opel">Opel</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                      <option selected="selected">SCHOOL</option>        
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="opel">Opel</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                    <button class="btn yellowcol" style="color: #244892!important;border-radius: 15px;width: 100px;font-size: 12px;margin-bottom: 5px">ENTER</button>
                   </div>
+              </div>
             <div class="col-lg-3 p-4">
                 <div class="row" style="background:   ;border-radius: 10px;color: white;width: 250px">
                     <p style="font-size: 14px;color: dimgrey">Enter your class code here</p>
