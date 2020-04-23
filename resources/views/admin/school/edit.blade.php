@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                       <label for="subject">Subject</label>
-                      <input type="text" class="form-control" name="newsubName" placeholder="Enter School" value="{{$school->newname}}">
+                      <input type="text" class="form-control" name="newname" placeholder="Enter School" value="{{$school->newname}}">
                     </div>
 
                 <button type="submit" class="btn btn-success">Update</button>

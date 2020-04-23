@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -32,6 +32,10 @@ Route::get('/admindashboard', function () {
 // Route::get('/admin/school', function () {
 //     return view('admin.school.index');
 // });
+
+Route::get('/', function () {
+    return view('frontend.homepage');
+});
 
 Route::get('/admin/subject', function () {
     return view('admin.subjects.index');

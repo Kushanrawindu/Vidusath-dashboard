@@ -18,6 +18,8 @@ class CreateClassworksTable extends Migration
             $table->String('subject');
             $table->String('grade');
             $table->String('class');
+            $table->String('title');
+            $table->String('description');
             $table->String('date');
             $table->String('time');
             $table->String('file');

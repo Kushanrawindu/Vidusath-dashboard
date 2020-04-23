@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Storage;
 use Illuminate\Http\Request;
 use App\Classwork;
 
@@ -40,9 +41,12 @@ class ClassworkController extends Controller
             'subject'=>'required',
             'grade'=>'required',
             'class'=>'required',
+            'title'=>'required',
+            'description'=>'required',
             'date'=>'required',
             'time'=>'required',
             'file'=>'required',
+            'file.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'option'=>'required'
         ]);
 
@@ -62,9 +66,11 @@ class ClassworkController extends Controller
         $classwork->subject = $request->subject;
         $classwork->grade = $request->grade;
         $classwork->class = $request->class;
+        $classwork->title = $request->title;
+        $classwork->description = $request->description;
         $classwork->date = $request->date;
         $classwork->time = $request->time;
-        $classwork->file = $request->file;
+        $classwork->file = $fileNameToStore;
         $classwork->option = $request->option;
         $classwork->save();
         return redirect(route('classwork.index'));
