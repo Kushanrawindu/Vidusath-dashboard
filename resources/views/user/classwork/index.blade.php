@@ -267,6 +267,7 @@
                   <thead>
                     <tr>
                       <th>ID</th>
+                      <th>Teacher</th>
                       <th>Subject</th>
                       <th>Grade</th>
                       <th>Class</th>
@@ -283,6 +284,7 @@
                     @foreach ($classwork as $classwork)
                     <tr>
                       <th scope="row">{{$classwork->id}}</th>
+                      <td>{{ Auth::user()->name }}</td>
                       <td>{{$classwork->subject}}</td>
                       <td>{{$classwork->grade}}</td>
                       <td>{{$classwork->class}}</td>
