@@ -33,9 +33,9 @@ Route::get('/admindashboard', function () {
 //     return view('admin.school.index');
 // });
 
-Route::get('/', function () {
-    return view('frontend.homepage');
-});
+
+
+Route::get('/', 'UserHomeController@index');
 
 Route::get('/admin/subject', function () {
     return view('admin.subjects.index');

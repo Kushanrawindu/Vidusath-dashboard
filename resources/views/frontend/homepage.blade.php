@@ -11,11 +11,9 @@
              <div class="col-lg-8" style="padding: 20px"><p style="font-size: 14px;margin-left: 5px">Select your school, then enter the relevant subject and classroom</p>
                   <div class="dropdown inline">
                     <select class="btn btn-light btn-sm dropdown-toggle text-left p-1" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
-                      <option selected="selected">DISTRICT</option>        
-                      <option value="volvo">Volvo</option>
-                      <option value="saab">Saab</option>
-                      <option value="opel">Opel</option>
-                      <option value="audi">Audi</option>
+                      @foreach ($schools as $school)
+                        <option value="{{$school->district}}">{{$school->district}}</option>
+                      @endforeach
                     </select>
                     <select class="btn btn-light btn-sm dropdown-toggle text-left p-1" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
                       <option selected="selected">SCHOOL</option>        
