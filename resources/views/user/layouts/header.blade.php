@@ -12,6 +12,7 @@
 <div class="profile_info">
     <span>Welcome,</span>
     <h2>{{ Auth::user()->name }}</h2>
+    <h5>{{ Auth::user()->school }}</h5>
 </div>
 </div>
 <!-- /menu profile quick info -->

@@ -10,19 +10,19 @@
              <div class="col-lg-1"><img class="" src="{{asset('user/img/school%20icon.png')}}" height="100px"></div>
              <div class="col-lg-8" style="padding: 20px"><p style="font-size: 14px;margin-left: 5px">Select your school, then enter the relevant subject and classroom</p>
                   <div class="dropdown inline">
-                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
-                      @foreach ($schools as $school)
-                        <option value="{{$school->district}}">{{$school->district}}</option>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="district" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                      <option selected="false">--Select District--</option>
+                      @foreach ($district as $district)
+                        <option value="{{$district->district_id}}">{{$district->name_en}}</option>
                       @endforeach
                     </select>
-                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
-                      <option selected="selected">SCHOOL</option>        
-                      <option value="volvo">Volvo</option>
-                      <option value="saab">Saab</option>
-                      <option value="opel">Opel</option>
-                      <option value="audi">Audi</option>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 school" name="school" id="school" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                      <option selected="false">--Select School--</option>
+                      {{-- @foreach ($schools as $school)
+                        <option value="{{$school->id}}">{{$school->name}}</option>
+                      @endforeach --}}
                     </select>
-                    <button class="btn yellowcol" style="color: #244892!important;border-radius: 15px;width: 100px;font-size: 12px;margin-bottom: 5px">ENTER</button>
+                    <button class="btn yellowcol" name="search" id="search" style="color: #244892!important;border-radius: 15px;width: 100px;font-size: 12px;margin-bottom: 5px">SEARCH</button>
                   </div>
               </div>
             <div class="col-lg-3 p-4">

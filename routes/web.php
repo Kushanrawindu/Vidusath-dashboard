@@ -35,6 +35,19 @@ Route::get('/admindashboard', function () {
 
 
 
+
+Route::get('/gradesubject', function () {
+    return view('frontend.gradeSubject.index');
+});
+// Route::get('/grade', function () {
+//     return view('frontend.grade.index');
+// });
+
+
+Route::get('/getSchools/{id}', 'UserHomeController@getSchool')->name('getSchool');
+
+
+
 Route::get('/', 'UserHomeController@index');
 
 Route::get('/admin/subject', function () {

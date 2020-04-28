@@ -15,12 +15,14 @@ class CreateUsersSeeder extends Seeder
         $user = [
             [
                'name'=>'Admin',
+               'school'=>'Kalyani Maha Vidyalaya',
                'email'=>'admin@vidusath.com',
                 'is_admin'=>'1',
                'password'=> bcrypt('vidusathadminpw'),
             ],
             [
                'name'=>'User',
+               'school'=>'Kalyani Maha Vidyalaya',
                'email'=>'user@vidusath.com',
                 'is_admin'=>'0',
                'password'=> bcrypt('123456'),
