@@ -71,7 +71,7 @@
         var link = document.getElementById("school").value;
 
         $.ajax({
-            url: window.location.href="getSchools/" + link
+            url: window.location.href="getData/" + link,
         });
     });
 </script>

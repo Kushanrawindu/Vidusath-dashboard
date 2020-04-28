@@ -32,4 +32,10 @@ class UserHomeController extends Controller
         return json_encode($myschool);
 
     }
+
+    public function getData($id)
+    {
+        $data = Grade::where("school_id", $id)->get();
+        return view('frontend.grade.index', compact('data'));
+    }
 }

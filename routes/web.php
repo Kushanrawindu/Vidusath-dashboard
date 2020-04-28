@@ -45,6 +45,7 @@ Route::get('/gradesubject', function () {
 
 
 Route::get('/getSchools/{id}', 'UserHomeController@getSchool')->name('getSchool');
+Route::get('/getData/{id}', 'UserHomeController@getData')->name('getData');
 
 
 
