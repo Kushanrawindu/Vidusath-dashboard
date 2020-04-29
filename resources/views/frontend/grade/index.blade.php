@@ -67,8 +67,9 @@
     <div class="container">
       <div class="row" style="padding-top: 0px!important">
           <div class="col-lg-12 d-flex flex-column justify-content-center rounded" data-aos="fade-up" style="background-color: #e8eaf6;">  
+            {{-- <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px">Kalyani Maha Vidyalaya</p> --}}
             @foreach ($data as $data)
-              <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px">{{$data->name}}</p>
+              <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px">{{$data->school->name}}</p>
             @endforeach  
         </div>
       </div>
