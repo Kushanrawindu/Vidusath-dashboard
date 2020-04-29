@@ -52,7 +52,7 @@ Route::get('/getData/{id}', 'UserHomeController@getData')->name('getData');
 Route::get('/', 'UserHomeController@index');
 
 Route::get('/admin/subject', function () {
-    return view('admin.subjects.index');
+    return view('admin.grades.index');
 });
 
 Route::get('/admin/regteachers', function () {
