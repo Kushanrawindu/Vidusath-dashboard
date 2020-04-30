@@ -43,6 +43,10 @@ Route::get('/gradesubject', function () {
 //     return view('frontend.grade.index');
 // });
 
+Route::get('/admin/assignclass', function () {
+    return view('admin.assignClasses.index');
+});
+
 
 Route::get('/getSchools/{id}', 'UserHomeController@getSchool')->name('getSchool');
 Route::get('/getData/{id}', 'UserHomeController@getData')->name('getData');
@@ -80,3 +84,7 @@ Route::get('/user/uploads', function () {
 Route::resource('school', 'SchoolController');
 
 Route::resource('classwork', 'ClassworkController');
+
+Route::resource('grades', 'GradeController');
+
+Route::resource('classes', 'ClassController');

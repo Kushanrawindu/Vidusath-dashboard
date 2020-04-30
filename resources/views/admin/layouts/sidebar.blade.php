@@ -14,6 +14,7 @@
           </ul> --}}
         </li>
         <li><a href="/admin/subject"><i class="fa fa-edit"></i> Grades</a></li>
+        <li><a href="/admin/assignclass"><i class="fa fa-edit"></i> Assign Classes</a></li>
         <li><a href="/admin/regteachers"><i class="fa fa-user"></i> Registered Teachers</a></li>
         <li><a href="/admin/regstudents"><i class="fa fa-child"></i> Registered Students</a></li>
       </ul>

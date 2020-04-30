@@ -38,3 +38,26 @@
 
 <!-- Custom Theme Scripts -->
 <script src="{{asset('admin/build/js/custom.min.js')}}"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    var table = $('#example').DataTable({
+        columnDefs: [{
+            orderable: false,
+            targets: [1,2,3]
+        }]
+    });
+ 
+    // $('button').click( function() {
+    //     var data = table.$('input, select').serialize();
+    //     alert(
+    //         "The following data would have been submitted to the server: \n\n"+
+    //         data.substr( 0, 120 )+'...'
+    //     );
+    //     return false;
+    // } );
+    } );
+</script>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\UserHome;
 use App\School;
-use App\Grade;
+use App\Grades;
 use App\District;
 use App\MySchool;
 
@@ -20,7 +20,6 @@ class UserHomeController extends Controller
     {
         // $schools = MySchool::all();
         $district = District::all();
-        // dd($schools);
 
         return view('frontend.homepage', compact('district'));
     }
@@ -35,7 +34,8 @@ class UserHomeController extends Controller
 
     public function getData($id)
     {
-        $data = Grade::where("school_id", $id)->get();
-        return view('frontend.grade.index', compact('data'));
+        // school id eka anuwa eke tyena grades walata ynawa..
+        // $data = Grades::where("school_id", $id)->get();
+        // return view('frontend.grade.index', compact('data'));
     }
 }

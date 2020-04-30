@@ -64,22 +64,9 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <select class="form-control" id="grade" name="grade">
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12-Science</option>
-                <option>12-Art</option>
-                <option>12-Maths</option>
-                <option>12-Commerce</option>
-                <option>12-Technology</option>
-                <option>13-Science</option>
-                <option>13-Art</option>
-                <option>13-Maths</option>
-                <option>13-Commerce</option>
-                <option>13-Technology</option>
+                @foreach ($grades as $grades)
+                  <option value="{{$grades->id}}">{{$grades->grade}}</option>
+                @endforeach 
               </select>
             </div>
           </div>
@@ -87,14 +74,9 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Class</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <select class="form-control" id="class" name="class">
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-                <option>D</option>
-                <option>E</option>
-                <option>F</option>
-                <option>G</option>
-                <option>H</option>
+                @foreach ($classes as $classes)
+                    <option value="{{$classes->id}}">{{$classes->class}}</option>
+                @endforeach
               </select>
             </div>
           </div>

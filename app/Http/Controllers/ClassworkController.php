@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Storage;
 use Illuminate\Http\Request;
 use App\Classwork;
+use App\Grades;
+use App\Classes;
 
 class ClassworkController extends Controller
 {
@@ -15,8 +17,11 @@ class ClassworkController extends Controller
      */
     public function index()
     {
+        $classes = Classes::all();
+        $grades = Grades::all();
         $classwork = Classwork::all();
-        return view('user.classwork.index')->with('classwork',$classwork);
+        return view('user.classwork.index',compact('classwork','grades','classes'));
+        // ->with('classwork',$classwork);
     }
 
     /**

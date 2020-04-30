@@ -32,6 +32,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->

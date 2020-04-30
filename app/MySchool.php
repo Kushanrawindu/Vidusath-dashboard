@@ -13,6 +13,8 @@ class MySchool extends Model
 
     public function grades()
     {
-        return $this->hasMany('App\Grade');
+        return $this->hasMany('App\Grades');
     }
+
+    
 }
