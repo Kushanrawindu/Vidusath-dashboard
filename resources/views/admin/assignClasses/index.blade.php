@@ -14,7 +14,7 @@
 <div class="form-group">
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Select School</label>
     <div class="col-md-6 col-sm-6 col-xs-12">
-      <select class="form-control" id="school" name="school">
+      <select class="form-control" id="name" name="name">
         {{-- @foreach ($my_schools as $my_schools)
           <option value="{{$my_schools->id}}">{{$my_schools->name}}</option>
         @endforeach  --}}

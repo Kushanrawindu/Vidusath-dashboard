@@ -88,3 +88,5 @@ Route::resource('classwork', 'ClassworkController');
 Route::resource('grades', 'GradeController');
 
 Route::resource('classes', 'ClassController');
+
+Route::resource('myschool', 'MySchoolController');

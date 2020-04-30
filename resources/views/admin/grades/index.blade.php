@@ -110,7 +110,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach ($grades as $grades)
+                    {{-- @foreach ($grades as $grades)
                     <tr>
                       <th scope="row">{{$grades->id}}</th>
                       <td>{{$grades->grade}}</td>
@@ -123,7 +123,7 @@
                         </form>
                       </td>
                     </tr>
-                    @endforeach
+                    @endforeach --}}
                     </tbody>
                 </table>
             </div>
