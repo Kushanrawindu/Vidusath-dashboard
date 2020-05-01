@@ -22,7 +22,7 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Select District</label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <select class="form-control" id="district_id" name="district_id">
-                    <option>Select your School</option>
+                    <option>Select District</option>
                     @foreach ($districts as $district)
                       <option value="{{$district->district_id}}">{{$district->name_en}}</option>
                     @endforeach

@@ -35,7 +35,7 @@ class UserHomeController extends Controller
     public function getData($id)
     {
         // school id eka anuwa eke tyena grades walata ynawa..
-        // $data = Grades::where("school_id", $id)->get();
-        // return view('frontend.grade.index', compact('data'));
+         //$data = Grades::where("school_id", $id)->get();
+         //return view('frontend.grade.index', compact('data'));
     }
 }
