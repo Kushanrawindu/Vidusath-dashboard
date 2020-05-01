@@ -15,9 +15,12 @@ class MySchoolController extends Controller
      */
     public function index()
     {
-        $myschool = MySchool::all();
+        $myschools = MySchool::all();
         $district = District::all();
-        return view('admin.school.index',compact('myschool','district'))->with('myschool',$myschool);;
+        
+        dd($myschools);
+        //return view('admin.school.index',compact('myschools','district'));
+        // ->with('my_school',$myschool);
     }
 
     /**

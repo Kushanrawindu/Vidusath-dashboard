@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
    
 @section('main-content')
-<form action="#" method="POST" class="form-horizontal form-label-left">
+<form action="{{route('assignclass.store')}}" method="POST" class="form-horizontal form-label-left">
     {{ csrf_field() }}
 <div class="page-title">
     <div class="title_left">
@@ -15,9 +15,10 @@
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Select School</label>
     <div class="col-md-6 col-sm-6 col-xs-12">
       <select class="form-control" id="name" name="name">
-        {{-- @foreach ($my_schools as $my_schools)
-          <option value="{{$my_schools->id}}">{{$my_schools->name}}</option>
-        @endforeach  --}}
+          <option>Select the School</option>
+        @foreach ($myschools as $my_school)
+          <option value="{{$my_school->id}}">{{$my_school->name}}</option>
+        @endforeach 
       </select>
     </div>
 </div>
@@ -32,324 +33,28 @@
         </tr>
     </thead>
     <tbody>
+       
+        @for($i=1; $i < 9; $i++)
         <tr>
-            <td>1</td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                    <option value="Edinburgh" selected="selected">
-                        Edinburgh
-                    </option>
-                    <option value="London">
-                        London
-                    </option>
-                    <option value="New York">
-                        New York
-                    </option>
-                    <option value="San Francisco">
-                        San Francisco
-                    </option>
-                    <option value="Tokyo">
-                        Tokyo
-                    </option>
+            <td>{{$i}}</td>
+            <td>
+                <select size="1" id="row-1-office" name="row_{{$i}}_grade">
+                    <option>Select the Grade</option>
+                    @foreach($grades as $grade)
+                        <option value="{{$grade->grade}}">{{$grade->grade}}</option>
+                    @endforeach
                 </select>
             </td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                <option value="Edinburgh" selected="selected">
-                    Edinburgh
-                </option>
-                <option value="London">
-                    London
-                </option>
-                <option value="New York">
-                    New York
-                </option>
-                <option value="San Francisco">
-                    San Francisco
-                </option>
-                <option value="Tokyo">
-                    Tokyo
-                </option>
+            <td>
+                <select size="1" id="row-1-office" name="row_{{$i}}_class">
+                    <option>Select the Class</option>
+                    @foreach ($classes as $class)
+                        <option value="{{$class->class}}">{{$class->class}}</option>
+                    @endforeach
                 </select>
             </td>
         </tr>
-        <tr>
-            <td>2</td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                    <option value="Edinburgh" selected="selected">
-                        Edinburgh
-                    </option>
-                    <option value="London">
-                        London
-                    </option>
-                    <option value="New York">
-                        New York
-                    </option>
-                    <option value="San Francisco">
-                        San Francisco
-                    </option>
-                    <option value="Tokyo">
-                        Tokyo
-                    </option>
-                </select>
-            </td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                <option value="Edinburgh" selected="selected">
-                    Edinburgh
-                </option>
-                <option value="London">
-                    London
-                </option>
-                <option value="New York">
-                    New York
-                </option>
-                <option value="San Francisco">
-                    San Francisco
-                </option>
-                <option value="Tokyo">
-                    Tokyo
-                </option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                    <option value="Edinburgh" selected="selected">
-                        Edinburgh
-                    </option>
-                    <option value="London">
-                        London
-                    </option>
-                    <option value="New York">
-                        New York
-                    </option>
-                    <option value="San Francisco">
-                        San Francisco
-                    </option>
-                    <option value="Tokyo">
-                        Tokyo
-                    </option>
-                </select>
-            </td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                <option value="Edinburgh" selected="selected">
-                    Edinburgh
-                </option>
-                <option value="London">
-                    London
-                </option>
-                <option value="New York">
-                    New York
-                </option>
-                <option value="San Francisco">
-                    San Francisco
-                </option>
-                <option value="Tokyo">
-                    Tokyo
-                </option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>4</td>
-            
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                    <option value="Edinburgh" selected="selected">
-                        Edinburgh
-                    </option>
-                    <option value="London">
-                        London
-                    </option>
-                    <option value="New York">
-                        New York
-                    </option>
-                    <option value="San Francisco">
-                        San Francisco
-                    </option>
-                    <option value="Tokyo">
-                        Tokyo
-                    </option>
-                </select>
-            </td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                <option value="Edinburgh" selected="selected">
-                    Edinburgh
-                </option>
-                <option value="London">
-                    London
-                </option>
-                <option value="New York">
-                    New York
-                </option>
-                <option value="San Francisco">
-                    San Francisco
-                </option>
-                <option value="Tokyo">
-                    Tokyo
-                </option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>5</td>
-            
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                    <option value="Edinburgh" selected="selected">
-                        Edinburgh
-                    </option>
-                    <option value="London">
-                        London
-                    </option>
-                    <option value="New York">
-                        New York
-                    </option>
-                    <option value="San Francisco">
-                        San Francisco
-                    </option>
-                    <option value="Tokyo">
-                        Tokyo
-                    </option>
-                </select>
-            </td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                <option value="Edinburgh" selected="selected">
-                    Edinburgh
-                </option>
-                <option value="London">
-                    London
-                </option>
-                <option value="New York">
-                    New York
-                </option>
-                <option value="San Francisco">
-                    San Francisco
-                </option>
-                <option value="Tokyo">
-                    Tokyo
-                </option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>6</td>
-            
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                    <option value="Edinburgh" selected="selected">
-                        Edinburgh
-                    </option>
-                    <option value="London">
-                        London
-                    </option>
-                    <option value="New York">
-                        New York
-                    </option>
-                    <option value="San Francisco">
-                        San Francisco
-                    </option>
-                    <option value="Tokyo">
-                        Tokyo
-                    </option>
-                </select>
-            </td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                <option value="Edinburgh" selected="selected">
-                    Edinburgh
-                </option>
-                <option value="London">
-                    London
-                </option>
-                <option value="New York">
-                    New York
-                </option>
-                <option value="San Francisco">
-                    San Francisco
-                </option>
-                <option value="Tokyo">
-                    Tokyo
-                </option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>7</td>
-            
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                    <option value="Edinburgh" selected="selected">
-                        Edinburgh
-                    </option>
-                    <option value="London">
-                        London
-                    </option>
-                    <option value="New York">
-                        New York
-                    </option>
-                    <option value="San Francisco">
-                        San Francisco
-                    </option>
-                    <option value="Tokyo">
-                        Tokyo
-                    </option>
-                </select>
-            </td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                <option value="Edinburgh" selected="selected">
-                    Edinburgh
-                </option>
-                <option value="London">
-                    London
-                </option>
-                <option value="New York">
-                    New York
-                </option>
-                <option value="San Francisco">
-                    San Francisco
-                </option>
-                <option value="Tokyo">
-                    Tokyo
-                </option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>8</td>
-            
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                    <option value="Edinburgh" selected="selected">
-                        Edinburgh
-                    </option>
-                    <option value="London">
-                        London
-                    </option>
-                    <option value="New York">
-                        New York
-                    </option>
-                    <option value="San Francisco">
-                        San Francisco
-                    </option>
-                    <option value="Tokyo">
-                        Tokyo
-                    </option>
-                </select>
-            </td>
-            <td><select size="1" id="row-1-office" name="row-1-office">
-                <option value="Edinburgh" selected="selected">
-                    Edinburgh
-                </option>
-                <option value="London">
-                    London
-                </option>
-                <option value="New York">
-                    New York
-                </option>
-                <option value="San Francisco">
-                    San Francisco
-                </option>
-                <option value="Tokyo">
-                    Tokyo
-                </option>
-                </select>
-            </td>
-        </tr>
+        @endfor
     </tbody>
 </table>
 </form>

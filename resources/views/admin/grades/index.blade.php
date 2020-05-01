@@ -21,12 +21,6 @@
             <br />
             <form action="{{route('grades.store')}}" method="POST" class="form-horizontal form-label-left">
                 {{ csrf_field() }}
-                {{-- <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">School_Id</label>
-                    <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text" class="demo1 form-control" value="" id="school_id" name="school_id"/>
-                    </div>
-                </div> --}}
 
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Grade</label>
@@ -59,20 +53,6 @@
             <form action="{{route('classes.store')}}" method="POST" class="form-horizontal form-label-left">
                 {{ csrf_field() }}
   
-                {{-- <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">School_Id</label>
-                    <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text" class="demo1 form-control" value="" id="school_id" name="school_id"/>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Grade_Id</label>
-                    <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text" class="demo1 form-control" value="" id="grade_id" name="grade_id"/>
-                    </div>
-                </div> --}}
-
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Class</label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -104,19 +84,18 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            {{-- <th>School_id</th> --}}
                             <th>Grade</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                    {{-- @foreach ($grades as $grades)
+                    {{-- @foreach ($grades as $grade)
                     <tr>
-                      <th scope="row">{{$grades->id}}</th>
-                      <td>{{$grades->grade}}</td>
+                      <th scope="row">{{$grade->id}}</th>
+                      <td>{{$grade->grade}}</td>
                       <td style="display:flex">
-                        <a href="{{route('grades.edit', $grades->id)}}" class="btn btn-warning btn-xs">Edit</a>
-                        <form action="{{route('grades.destroy', $grades->id)}}" method="POST" style="display:inline-block;">
+                        <a href="{{route('grades.edit', $grade->id)}}" class="btn btn-warning btn-xs">Edit</a>
+                        <form action="{{route('grades.destroy', $grade->id)}}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-xs" >Delete</button>
@@ -137,8 +116,6 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            {{-- <th>School_id</th>
-                            <th>Grade_id</th> --}}
                             <th>Class</th>
                             <th>Action</th>
                         </tr>

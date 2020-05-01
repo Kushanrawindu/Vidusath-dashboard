@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MySchool;
-use App\District;
+use App\Grades;
+use App\Classes;
+use App\AssignClass;
 
-class SchoolController extends Controller
+class AssignClassController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +17,10 @@ class SchoolController extends Controller
      */
     public function index()
     {
-
-        $schools = MySchool::all();
-        $districts = District::all();
-        return view('admin.school.index',compact('schools','districts'));
-        
+        $myschools = MySchool::all();
+        $grades = Grades::all();
+        $classes = Classes::all();
+        return view('admin.assignClasses.index', compact('myschools', 'grades', 'classes'));
     }
 
     /**
@@ -40,17 +41,20 @@ class SchoolController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'district_id'=>'required',
-            'name'=>'required'
-        ]);
+        dd($request->all());
 
-        $school = new School();
-        $school->district_id = $request->district_id;
-        $school->name = $request->name;
-        $school->save();
-        return redirect(route('school.index'));
-        // dd($request->all());
+        $class = new AssignClass();
+
+       for($i = 1; $i < 9; $i++){
+
+        $class->schoolname = $request->school->name;
+
+        $class->classname = $request->class;
+
+        $class->grade = $request->grade;
+
+        $class->save();
+       }
     }
 
     /**
@@ -72,8 +76,7 @@ class SchoolController extends Controller
      */
     public function edit($id)
     {
-        $school = School::find($id);
-        return view('admin.school.index')->with('school', $school);
+        //
     }
 
     /**
@@ -85,17 +88,7 @@ class SchoolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'newdistrict'=>'required',
-            'newname'=>'required'
-        ]);
-
-        $school = School::findOrFail($id);
-        $school->district = $request->newdistrict;
-        $school->name = $request->newname;
-        $school->update();
-        
-        return redirect(route('school.index'))->with('success', 'Successfully Updated');
+        //
     }
 
     /**
@@ -106,8 +99,6 @@ class SchoolController extends Controller
      */
     public function destroy($id)
     {
-        $school =  School::find($id);
-        $school->delete();
-        return redirect(route('school.index'))->with('success', 'Successfully Deleted');
+        //
     }
 }
