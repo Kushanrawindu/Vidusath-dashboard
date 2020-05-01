@@ -45,7 +45,7 @@
           </div>
           <div style="padding-top: 50px">
               <p class=""style="font-size: 20px ">Register for now free account as a...</p>
-              <a href="#" class="btn-get-started scrollto yellowcol">Teacher</a>
+              <a href="/register" class="btn-get-started scrollto yellowcol">Teacher</a>
               <a href="#" class="btn-get-started scrollto yellow">Student</a>
             </div>
         </div>
