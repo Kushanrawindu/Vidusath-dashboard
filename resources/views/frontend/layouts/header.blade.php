@@ -21,7 +21,7 @@
                         <a class="dropdown-item" href="#">தமில்</a>
                      
                     </div> </li>
-        <li><a class="btn yellowcol cen" href="#">Login</a></li>    
+        <li><a class="btn yellowcol cen" href="/login">Login</a></li>    
         </ul>
       </nav><!-- .nav-menu -->
 
