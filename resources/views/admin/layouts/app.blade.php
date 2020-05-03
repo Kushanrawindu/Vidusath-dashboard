@@ -16,9 +16,9 @@
           </div>
           @include('admin.layouts.topnav')
           <div class="right_col" role="main">
-            @section('main-content')
+            <!-- @section('main-content') -->
         
-            @show
+            @yield('main-content')
           </div>
           @include('admin.layouts.footer')
         </div>

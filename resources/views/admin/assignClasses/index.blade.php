@@ -38,7 +38,7 @@
         <tr>
             <td>{{$i}}</td>
             <td>
-                <select size="1" id="row-1-office" name="rows{{$i}}grade[]">
+                <select size="1" id="row-1-office" name="grade_{{$i}}">
                     <option>Select the Grade</option>
                     @foreach($grades as $grade)
                         <option value="{{$grade->grade}}">{{$grade->grade}}</option>
@@ -46,7 +46,7 @@
                 </select>
             </td>
             <td>
-                <select size="1" id="row-1-office" name="rows{{$i}}class[]">
+                <select size="1" id="row-1-office" name="class_{{$i}}">
                     <option>Select the Class</option>
                     @foreach ($classes as $class)
                         <option value="{{$class->class}}">{{$class->class}}</option>

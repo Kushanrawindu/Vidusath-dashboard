@@ -41,18 +41,18 @@ class AssignClassController extends Controller
      */
     public function store(Request $request)
     {
-   
-        $input = $request->all();
-
-        foreach($input['rows'] as $row){
-            $class = new AssignClass([
-                'schoolname' => $request->name,
-                'grade' => $row['grade'],
-                'classname' => $row['class']
-            ]);
-        }
         
-        dd('done');
+
+        for($i = 1; $i < 9; $i++){
+            $class = new AssignClass();
+            $class->schoolname = $request->name;
+            $class->grade = $request->input("grade_".$i);
+            $class->classname = $request->input("class_".$i);
+            $class->save();
+        }
+
+
+        
     }
 
     /**
