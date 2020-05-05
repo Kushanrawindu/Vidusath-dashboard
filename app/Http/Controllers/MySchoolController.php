@@ -15,10 +15,13 @@ class MySchoolController extends Controller
      */
     public function index()
     {
-        $myschools = MySchool::all();
-        $district = District::all();
+        $schools = MySchool::all();
+        $districts = District::all();
+        return view('admin.school.index',compact('schools','districts'));
+        // $myschools = MySchool::all();
+        // $district = District::all();
         
-        dd($myschools);
+        // dd($myschools);
         //return view('admin.school.index',compact('myschools','district'));
         // ->with('my_school',$myschool);
     }
@@ -95,6 +98,8 @@ class MySchoolController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $myschool = MySchool::find($id);
+        $myschool->delete();
+        return redirect(route('school.index'))->with('success', 'Successfully Deleted');
     }
 }

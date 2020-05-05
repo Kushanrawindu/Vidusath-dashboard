@@ -14,6 +14,7 @@ class GradeController extends Controller
         // return view('frontend.grade.index', compact('my_schools'));
 
         $grades = Grades::all();
+    
         return view('admin.grades.index',compact('grades'));
         // ->with('grades',$grades);
     }
@@ -33,7 +34,7 @@ class GradeController extends Controller
 
     public function destroy($id)
     {
-        $grades =  Grades::find($id);
+        $grades = Grades::find($id);
         $grades->delete();
         return redirect(route('grades.index'))->with('success', 'Successfully Deleted');
     }

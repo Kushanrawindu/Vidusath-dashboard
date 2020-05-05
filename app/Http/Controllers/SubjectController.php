@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Subject;
+use App\Grades;
 
 class SubjectController extends Controller
 {
@@ -13,7 +15,9 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        $grades = Grades::all();
+        $subjects = Subject::all();
+        return view('admin.subjects.index', compact('subjects','grades'));
     }
 
     /**

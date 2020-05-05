@@ -54,7 +54,7 @@ Route::get('/getData/{id}', 'UserHomeController@getData')->name('getData');
 
 Route::get('/', 'UserHomeController@index');
 
-Route::get('/admin/subject', function () {
+Route::get('/admin/grade', function () {
     return view('admin.grades.index');
 });
 
@@ -92,3 +92,4 @@ Route::resource('classes', 'ClassController');
 
 Route::resource('myschool', 'MySchoolController');
 
+Route::resource('subjects', 'SubjectController');

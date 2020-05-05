@@ -55,7 +55,7 @@
                         <a class="dropdown-item" href="#">தமில்</a>
                      
                     </div> </li>
-        <li><a class="btn yellowcol cen bluetext" href="#">Login</a></li>    
+        <li><a class="btn yellowcol cen bluetext" href="/login">Login</a></li>    
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -68,9 +68,9 @@
       <div class="row" style="padding-top: 0px!important">
           <div class="col-lg-12 d-flex flex-column justify-content-center rounded" data-aos="fade-up" style="background-color: #e8eaf6;">  
             {{-- <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px">Kalyani Maha Vidyalaya</p> --}}
-            @foreach ($data as $data)
-              <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px">{{$data->school->name}}</p>
-            @endforeach  
+           
+              <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px">{{$data->name}}</p>
+             
         </div>
       </div>
     </div>
@@ -85,43 +85,47 @@
                <form>
                <p class="inline mb-1 cen ml-3">Select your class</p>
                
-               <div class="btn-group inline cen">
+               {{-- <div class="btn-group inline cen">
                       <button type="button" class="btn dropdown-toggle rounded borblue ml-3 mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Grade&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       </button>
                       <div class="dropdown-menu y-ovr">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>  
+                      /
+                        @foreach($grades as $grade)
+                          <option value="{{$grade->grade}}">{{$grade->grade}}</option>
+                        @endforeach
                       </div>
-                    </div>
-               
-                    <div class="btn-group inline cen">
+                    </div> --}}
+
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="district" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                      <option selected="false">--Select Grade--</option>
+                      <?php $grades = \App\Grades::all(); ?>
+                      @foreach($grades as $grade)
+                        <option value="{{$grade->grade}}">{{$grade->grade}}</option>
+                      @endforeach
+                    </select>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="district" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                      <option selected="false">--Select Class--</option>
+                        <?php $classes = \App\Classes::all(); ?>
+                        @foreach ($classes as $class)
+                        <option value="{{$class->class}}">{{$class->class}}</option>
+                        @endforeach
+                    </select>
+
+                    {{-- <div class="btn-group inline cen">
                       <button type="button" class="btn dropdown-toggle rounded borblue ml-3 mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       </button>
                       <div class="dropdown-menu y-ovr">
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>  
+                        
+                        <select>
+                        @foreach ($classes as $class)
+                          <option value="{{$class->class}}">{{$class->class}}</option>
+                        @endforeach
+                        </select>
                       </div>
-                    </div>
-                   <button type="button" class="btn yellowblk ml-3 mb-1 cen">Go</button> 
+                    </div> --}}
+                   <button type="button" class="btn yellowblk ml-3 mb-1 cen"><a href="/gradesubject">GO</a></button> 
                </form>
               </div>
               <div class="col-lg-12 cen">

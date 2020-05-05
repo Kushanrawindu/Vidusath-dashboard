@@ -70,8 +70,8 @@
                           <td>{{$myschool->name_en}}</td>
                           <td>{{$myschool->name}}</td>
                           <td style="display:flex">
-                            <a href="{{route('school.edit', $myschool->id)}}" class="btn btn-warning btn-xs">Edit</a>
-                            <form action="{{route('school.destroy', $myschool->id)}}" method="POST" style="display:inline-block;">
+                            <a href="{{route('myschool.edit', $myschool->id)}}" class="btn btn-warning btn-xs">Edit</a>
+                            <form action="{{route('myschool.destroy', $myschool->id)}}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-xs" >Delete</button>

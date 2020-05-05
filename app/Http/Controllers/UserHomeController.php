@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\UserHome;
-use App\School;
+// use App\School;
 use App\Grades;
 use App\District;
 use App\MySchool;
@@ -35,7 +35,8 @@ class UserHomeController extends Controller
     public function getData($id)
     {
         // school id eka anuwa eke tyena grades walata ynawa..
-         //$data = Grades::where("school_id", $id)->get();
-         //return view('frontend.grade.index', compact('data'));
+         $data = MySchool::where('id','=', $id)->first();
+         //dd($data->name);
+         return view('frontend.grade.index', compact('data'));
     }
 }

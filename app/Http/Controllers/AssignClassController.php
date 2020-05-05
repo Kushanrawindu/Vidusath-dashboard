@@ -51,13 +51,14 @@ class AssignClassController extends Controller
             $class->save();
         }
 
-
+        // return redirect(route('assignClasses.index'));
         
     }
 
     /**
      * Display the specified resource.
      *
+     * 
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
