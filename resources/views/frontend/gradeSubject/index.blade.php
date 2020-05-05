@@ -26,7 +26,7 @@
   <link href="{{asset('user/gradeSubject/assets/vendor/aos/aos.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{{('user/gradeSubject/assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('user/gradeSubject/assets/css/style.css')}}" rel="stylesheet">
   <!--Calender-->
   <link rel="stylesheet" href="{{asset('user/gradeSubject/css/clndr.css')}}" type="text/css" />
   <script src="{{asset('user/gradeSubject/js/underscore-min.js')}}"></script>
@@ -75,7 +75,7 @@
     <div class="container">
       <div class="row" style="padding-top: 0px!important">
           <div class="col-lg-12 d-flex flex-column justify-content-center rounded" style="background-color: #e8eaf6;">  
-          <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px">Kalyani Maha Vidyalaya</p>   
+          <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px">{{$data->name}}</p>   
           </div>
       </div>
     </div>
@@ -89,46 +89,24 @@
            <div class="col-lg-12 cen">
                <form>
                <p class="inline mb-1 cen ml-3">Select your class</p>
-               
-               <div class="btn-group inline cen">
-                      <button type="button" class="btn dropdown-toggle rounded borblue ml-3 mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Grade&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      </button>
-                      <div class="dropdown-menu y-ovr">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>  
-                      </div>
-                    </div>
-               
-                    <div class="btn-group inline cen">
-                      <button type="button" class="btn dropdown-toggle rounded borblue ml-3 mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      </button>
-                      <div class="dropdown-menu y-ovr">
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>
-                        <a class="dropdown-item" href="#">else</a>
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">else here</a>  
-                      </div>
-                    </div>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="district" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                      <option selected="false">--Select Grade--</option>
+                      <?php $grades = \App\Grades::all(); ?>
+                      @foreach($grades as $grade)
+                        <option value="{{$grade->grade}}">{{$grade->grade}}</option>
+                      @endforeach
+                    </select>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="district" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                      <option selected="false">--Select Class--</option>
+                        <?php $classes = \App\Classes::all(); ?>
+                        @foreach ($classes as $class)
+                        <option value="{{$class->class}}">{{$class->class}}</option>
+                        @endforeach
+                    </select>
                    <button type="button" class="btn yellowblk ml-3 mb-1 cen">Go</button> 
                </form>
-              </div></div>
+              </div>
+            </div>
           
             <div class="row pt-4">
               <div class="col-lg-12 purplebg rounded">

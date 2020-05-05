@@ -37,6 +37,6 @@ class UserHomeController extends Controller
         // school id eka anuwa eke tyena grades walata ynawa..
          $data = MySchool::where('id','=', $id)->first();
          //dd($data->name);
-         return view('frontend.grade.index', compact('data'));
+         return view('frontend.gradeSubject.index', compact('data'));
     }
 }

@@ -18,7 +18,7 @@ class UserGradeController extends Controller
         $grades = Grades::all();
         $classes = Classes::all();
         //dd($grades);
-        return view('frontend.grade.index', compact('grades', 'classes'));
+        return view('frontend.gradeSubject.index', compact('grades', 'classes'));
     }
 
     /**

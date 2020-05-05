@@ -16,12 +16,12 @@
       <div class="x_panel">
         <div class="x_content">
           {{-- <br /> --}}
-          <form action="#" method="POST" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+          <form action="{{route('subjects.store')}}" method="POST" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
             {{ csrf_field() }}
             <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <select class="form-control" id="district_id" name="district_id">
+                <select class="form-control" id="grade_id" name="grade_id">
                   <option>Select Grade</option>
                   <?php $grades = \App\Grades::all(); ?>
                       @foreach($grades as $grade)
@@ -59,8 +59,6 @@
                         <tr>
                           <th>ID</th>
                           <th>Grade</th>
-                          {{-- <th>Provine</th> --}}
-                          {{-- <th>Educational Zone</th> --}}
                           <th>Subject</th>
                           <th>Action</th>
                         </tr>

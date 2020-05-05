@@ -38,15 +38,17 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request,[
-            
-        //     'grade'=>'required'
-        // ]);
+        $this->validate($request,[
+            'grade_id'=>'required',
+            'subject'=>'required'
+        ]);
 
-        // $grades = new Grades();
-        // $grades->grade = $request->grade;
-        // $grades->save();
-        // return redirect(route('grades.index'));
+        $subjects = new Subject();
+        $subjects->grade_id = $request->grade_id;
+        $subjects->subject = $request->subject;
+        $subjects->save();
+        // dd($request->all());
+        return redirect(route('subjects.index'));
     }
 
     /**

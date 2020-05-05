@@ -27,6 +27,29 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('user/grade/assets/css/style.css')}}" rel="stylesheet">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href='//fonts.googleapis.com/css?family=Maven+Pro:700,400' rel='stylesheet' type='text/css'>    
+
+  <!-- Vendor CSS Files -->
+  <link href="{{asset('user/gradeSubject/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('user/gradeSubject/assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+  <link href="{{asset('user/gradeSubject/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('user/gradeSubject/assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
+  <link href="{{asset('user/gradeSubject/assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{asset('user/gradeSubject/assets/vendor/aos/aos.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{('user/gradeSubject/assets/css/style.css')}}" rel="stylesheet">
+  <!--Calender-->
+  <link rel="stylesheet" href="{{asset('user/gradeSubject/css/clndr.css')}}" type="text/css" />
+  <script src="{{asset('user/gradeSubject/js/underscore-min.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/js/moment-2.2.1.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/js/clndr.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/js/site.js')}}"></script>
+   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>   
+  <!--End Calender-->
+
  
 
 </head>
@@ -131,6 +154,7 @@
               <div class="col-lg-12 cen">
               <img src="{{asset('user/grade/img/Class%20img%201.png')}}" class="img-fluid" width="400px" style="padding-top: 150px">
               </div>
+
           </div>
         </div>
     </section><!-- End Portfolio Section -->        
@@ -151,6 +175,23 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('user/grade/assets/js/main.js')}}"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="{{asset('user/gradeSubject/assets/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/assets/vendor/jquery.easing/jquery.easing.min.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/assets/vendor/venobox/venobox.min.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/assets/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/js/jquery-1.11.1.min.js')}}"></script>  
+  <!-- Template Main JS File -->
+  <script src="{{asset('user/gradeSubject/assets/js/main.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/js/underscore-min.js')}}"></script>
+  <script src= "{{asset('user/gradeSubject/js/moment-2.2.1.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/js/clndr.js')}}"></script>
+  <script src="{{asset('user/gradeSubject/js/site.js')}}"></script>
 
 </body>
 
