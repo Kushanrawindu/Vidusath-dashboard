@@ -38,7 +38,15 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $this->validate($request,[
+            
+        //     'grade'=>'required'
+        // ]);
+
+        // $grades = new Grades();
+        // $grades->grade = $request->grade;
+        // $grades->save();
+        // return redirect(route('grades.index'));
     }
 
     /**

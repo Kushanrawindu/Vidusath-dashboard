@@ -23,9 +23,10 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <select class="form-control" id="district_id" name="district_id">
                   <option>Select Grade</option>
-                  {{-- @foreach ($districts as $district)
-                    <option value="{{$district->district_id}}">{{$district->name_en}}</option>
-                  @endforeach --}}
+                  <?php $grades = \App\Grades::all(); ?>
+                      @foreach($grades as $grade)
+                        <option value="{{$grade->id}}">{{$grade->grade}}</option>
+                      @endforeach
                 </select>
               </div>
             </div>
@@ -47,5 +48,45 @@
       </div>
     </div>
 </div>
+
+<div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Grade</th>
+                          {{-- <th>Provine</th> --}}
+                          {{-- <th>Educational Zone</th> --}}
+                          <th>Subject</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {{-- @foreach ($schools as $myschool)
+                        <tr>
+                          <th scope="row">{{$myschool->id}}</th>
+                          <td>{{$myschool->name_en}}</td>
+                          <td>{{$myschool->name}}</td>
+                          <td style="display:flex">
+                            <a href="{{route('myschool.edit', $myschool->id)}}" class="btn btn-warning btn-xs">Edit</a>
+                            <form action="{{route('myschool.destroy', $myschool->id)}}" method="POST" style="display:inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-xs" >Delete</button>
+                            </form>
+                          </td>
+                        </tr>
+                        @endforeach --}}
+                        
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
