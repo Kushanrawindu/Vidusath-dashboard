@@ -41,8 +41,6 @@ class AssignClassController extends Controller
      */
     public function store(Request $request)
     {
-        
-
         for($i = 1; $i < 9; $i++){
             $class = new AssignClass();
             $class->schoolname = $request->name;
@@ -50,9 +48,12 @@ class AssignClassController extends Controller
             $class->classname = $request->input("class_".$i);
             $class->save();
         }
+<<<<<<< HEAD
 
         // return redirect(route('assignClasses.index'));
         
+=======
+>>>>>>> 927fab5ed2937d752e6af5dc378c1eb729fbdc43
     }
 
     /**
