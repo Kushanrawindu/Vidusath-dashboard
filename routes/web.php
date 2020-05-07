@@ -51,6 +51,8 @@ Route::get('/getSchools/{id}', 'UserHomeController@getSchool')->name('getSchool'
 Route::get('/getData/{id}', 'UserHomeController@getData')->name('getData');
 
 
+Route::get('usergrade/getSubject', 'UserGradeController@getSubject')->name('usergrade.getSubject');
+
 
 Route::get('/', 'UserHomeController@index');
 
@@ -85,6 +87,8 @@ Route::resource('/admin/school', 'SchoolController');
 Route::resource('/admin/assignclass', 'AssignClassController');
 
 Route::resource('classwork', 'ClassworkController');
+
+Route::resource('usergrade', 'UserGradeController');
 
 Route::resource('grades', 'GradeController');
 

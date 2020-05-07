@@ -89,21 +89,21 @@
            <div class="col-lg-12 cen">
                <form>
                <p class="inline mb-1 cen ml-3">Select your class</p>
-                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="district" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="grade" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
                       <option selected="false">--Select Grade--</option>
                       <?php $grades = \App\Grades::all(); ?>
                       @foreach($grades as $grade)
                         <option value="{{$grade->grade}}">{{$grade->grade}}</option>
                       @endforeach
                     </select>
-                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="district" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="class" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
                       <option selected="false">--Select Class--</option>
                         <?php $classes = \App\Classes::all(); ?>
                         @foreach ($classes as $class)
                         <option value="{{$class->class}}">{{$class->class}}</option>
                         @endforeach
                     </select>
-                   <button type="button" class="btn yellowblk ml-3 mb-1 cen">Go</button> 
+                   <button type="button" id="go" class="btn yellowblk ml-3 mb-1 cen">Go</button> 
                </form>
               </div>
             </div>
@@ -114,9 +114,9 @@
                    <img src="{{asset('user/gradeSubject/img/Class%20img%202.png')}}" class="float-right" height="130px">
                   </div>
                <div class="col-lg-6 float-left pt-4 pl-5 pr-5 pb-0 col-xs-4">
-                   <div class="row"><h1 class="float-left bluetext">GRADE 8-B</h1></div>
-                   <div class="row"><h3 class="float-left bluetext">Class Code:0000</h3>
-                   <button type="button" class="btn whitebtn btnsize ml-2 mr-2 mb-1 inline cen">Copy</button>
+                   <div class="row"><h1 class="float-left bluetext" id="grade_txt">GRADE </h1></div>
+                   <div class="row"><h3 class="float-left bluetext" id="class_txt">Class </h3>
+                   {{-- <button type="button" class="btn whitebtn btnsize ml-2 mr-2 mb-1 inline cen">Copy</button> --}}
                    </div>
                   </div>      
               </div>
@@ -216,24 +216,12 @@
             </div>  
               </div>
               
-    <div class="col-lg-9">
-             <div class="col-sm-3 inline p-2 ml-5  mb-3  purplebgsub">
+    <div class="col-lg-9" id="subject_view">
+             {{-- <div class="col-sm-3 inline p-2 ml-5  mb-3  purplebgsub">
                 <img src="{{asset('user/gradeSubject/img/book%20ico.png')}}" class="float-left inline" width="30px">
                  <a class="float-right inline mr-2 bluetext subtext" href="#">Subject</a>
-                    </div>
-              <div class="col-sm-3 inline p-2 ml-5 mb-3  purplebgsub">
-                <img src="{{asset('user/gradeSubject/img/book%20ico.png')}}" class="float-left inline" width="30px">
-                 <a class="float-right inline mr-2 bluetext subtext" href="#">Subject</a>
-                    </div> 
-              <div class="col-sm-3 inline p-2  ml-5 mb-3  purplebgsub">
-                <img src="{{asset('user/gradeSubject/img/book%20ico.png')}}" class="float-left inline" width="30px">
-                 <a class="float-right inline mr-2 bluetext subtext" href="#">Subject</a>
-                    </div> 
-              <div class="col-sm-3 inline p-2  ml-5 mb-3  purplebgsub">
-                <img src="{{asset('user/gradeSubject/img/book%20ico.png')}}" class="float-left inline" width="30px">
-                 <a class="float-right inline mr-2 bluetext subtext" href="#">Subject</a>
-                    </div>
-              </div>          
+              </div> --}}
+                       
     </div>
           
         </div>
@@ -243,6 +231,7 @@
 
 
   <a href="#" class="back-to-top"><i class="bx bxs-up-arrow-alt blue"></i></a>
+
 
   <!-- Vendor JS Files -->
   <script src="{{asset('user/gradeSubject/assets/vendor/jquery/jquery.min.js')}}"></script>
@@ -260,6 +249,28 @@
   <script src= "{{asset('user/gradeSubject/js/moment-2.2.1.js')}}"></script>
   <script src="{{asset('user/gradeSubject/js/clndr.js')}}"></script>
   <script src="{{asset('user/gradeSubject/js/site.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $("#go").on("click",function(){
+
+      var grade = $('#grade').val();
+      var cls = $('#class').val();
+
+
+        $.ajax({
+              url:"{{ route('usergrade.getSubject') }}",
+              method: "get",
+              data: {grade:grade,class:cls},
+              datatype: "json",
+              success:function (data) {
+                $('#subject_view').html(data.html)
+                $('#grade_txt').text("GRADE : "+grade);
+                $('#class_txt').text("Class : "+cls);
+              }
+           });
+    });
+</script>
 </body>
 
 </html>

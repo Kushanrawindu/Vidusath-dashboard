@@ -25,7 +25,19 @@
                   <option>Select Grade</option>
                   <?php $grades = \App\Grades::all(); ?>
                       @foreach($grades as $grade)
-                        <option value="{{$grade->id}}">{{$grade->grade}}</option>
+                        <option value="{{$grade->grade}}">{{$grade->grade}}</option>
+                      @endforeach
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <select class="form-control" id="class_id" name="class_id">
+                  <option>Select Class</option>
+                  <?php $classes = \App\Classes::all(); ?>
+                      @foreach($classes as $class)
+                        <option value="{{$class->class}}">{{$class->class}}</option>
                       @endforeach
                 </select>
               </div>
@@ -59,26 +71,28 @@
                         <tr>
                           <th>ID</th>
                           <th>Grade</th>
+                          <th>Class</th>
                           <th>Subject</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {{-- @foreach ($schools as $myschool)
+                        @foreach ($subjects as $subjects)
                         <tr>
-                          <th scope="row">{{$myschool->id}}</th>
-                          <td>{{$myschool->name_en}}</td>
-                          <td>{{$myschool->name}}</td>
-                          <td style="display:flex">
+                          <th scope="row">{{$subjects->id}}</th>
+                          <td>{{$subjects->grade_id}}</td>
+                          <td>{{$subjects->class_id}}</td>
+                          <td>{{$subjects->subject}}</td>
+                          {{-- <td style="display:flex">
                             <a href="{{route('myschool.edit', $myschool->id)}}" class="btn btn-warning btn-xs">Edit</a>
                             <form action="{{route('myschool.destroy', $myschool->id)}}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-xs" >Delete</button>
                             </form>
-                          </td>
+                          </td> --}}
                         </tr>
-                        @endforeach --}}
+                        @endforeach
                         
                       </tbody>
                     </table>

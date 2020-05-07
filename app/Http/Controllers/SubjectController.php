@@ -40,11 +40,13 @@ class SubjectController extends Controller
     {
         $this->validate($request,[
             'grade_id'=>'required',
+            'class_id'=>'required',
             'subject'=>'required'
         ]);
 
         $subjects = new Subject();
         $subjects->grade_id = $request->grade_id;
+        $subjects->class_id = $request->class_id;
         $subjects->subject = $request->subject;
         $subjects->save();
         // dd($request->all());

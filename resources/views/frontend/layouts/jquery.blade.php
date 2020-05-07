@@ -75,3 +75,8 @@
         });
     });
 </script>
+<script type="text/javascript">
+    $("#go").on("click",function(){
+        alert("cfvgbhj")
+    });
+</script>

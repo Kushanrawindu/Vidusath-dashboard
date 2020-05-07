@@ -15,4 +15,9 @@ class Grades extends Model
     {
         return $this->hasMany('App\Classes');
     }
+
+    public function subject()
+    {
+        return $this->hasMany('App\Subject');   
+    }
 }

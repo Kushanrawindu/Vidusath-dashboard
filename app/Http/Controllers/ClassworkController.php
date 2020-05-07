@@ -43,6 +43,7 @@ class ClassworkController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'school'=>'required',
             'subject'=>'required',
             'grade'=>'required',
             'class'=>'required',
@@ -68,6 +69,7 @@ class ClassworkController extends Controller
         }
 
         $classwork = new Classwork();
+        $classwork->school = $request->school;
         $classwork->subject = $request->subject;
         $classwork->grade = $request->grade;
         $classwork->class = $request->class;
@@ -78,7 +80,8 @@ class ClassworkController extends Controller
         $classwork->file = $fileNameToStore;
         $classwork->option = $request->option;
         $classwork->save();
-        return redirect(route('classwork.index'));
+        dd($request->all());
+        // return redirect(route('classwork.index'));
     }
 
     /**

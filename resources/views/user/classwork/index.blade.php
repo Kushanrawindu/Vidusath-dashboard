@@ -20,6 +20,34 @@
         <br />
         <form action="{{route('classwork.store')}}" method="POST" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
           {{ csrf_field() }}
+          
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Your School</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" class="form-control" disabled="disabled" id="school" name="school" value="{{ Auth::user()->school }}" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <select class="form-control" id="grade" name="grade">
+                @foreach ($grades as $grades)
+                  <option value="{{$grades->id}}">{{$grades->grade}}</option>
+                @endforeach 
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Class</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <select class="form-control" id="class" name="class">
+                @foreach ($classes as $classes)
+                    <option value="{{$classes->id}}">{{$classes->class}}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Subject</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -57,26 +85,6 @@
                     <option value="IT">Information & Communication Technology</option>
                     <option value="Agri">Agriculture & Food Technology</option>
                 </optgroup>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <select class="form-control" id="grade" name="grade">
-                @foreach ($grades as $grades)
-                  <option value="{{$grades->id}}">{{$grades->grade}}</option>
-                @endforeach 
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Class</label>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <select class="form-control" id="class" name="class">
-                @foreach ($classes as $classes)
-                    <option value="{{$classes->id}}">{{$classes->class}}</option>
-                @endforeach
               </select>
             </div>
           </div>
@@ -249,6 +257,7 @@
                   <thead>
                     <tr>
                       <th>ID</th>
+                      <th>School</th>
                       <th>Teacher</th>
                       <th>Subject</th>
                       <th>Grade</th>
@@ -266,6 +275,7 @@
                     @foreach ($classwork as $classwork)
                     <tr>
                       <th scope="row">{{$classwork->id}}</th>
+                      <td>{{ Auth::user()->school }}</td>
                       <td>{{ Auth::user()->name }}</td>
                       <td>{{$classwork->subject}}</td>
                       <td>{{$classwork->grade}}</td>

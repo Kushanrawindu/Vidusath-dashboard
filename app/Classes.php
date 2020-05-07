@@ -10,4 +10,9 @@ class Classes extends Model
     {
         return $this->belongsTo('App\Grades');
     }
+
+    // public function subject()
+    // {
+    //     return $this->hasMany('App\Subject');   
+    // }
 }

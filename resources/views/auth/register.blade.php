@@ -29,13 +29,14 @@
                             <label for="school" class="col-md-4 col-form-label text-md-right">{{ __('School') }}</label>
 
                             <div class="col-md-6">
-                                {{-- <select class="form-control @error('school') is-invalid @enderror" type="text" data-toggle="dropdown" ><span class="caret"></span>
-                                    @foreach ($school as $school)
+                                <select class="form-control @error('school') is-invalid @enderror" type="text" data-toggle="dropdown" ><span class="caret"></span>
+                                    <?php $schools = \App\MySchool::all(); ?>
+                                    @foreach ($schools as $school)
                                       <option value="{{$school->id}}">{{$school->name}}</option>
                                     @endforeach
-                                  </select> --}}
+                                  </select>
 
-                                <input id="school" type="text" class="form-control @error('school') is-invalid @enderror" name="school" value="{{ old('school') }}" required autocomplete="school" autofocus>
+                                {{-- <input id="school" type="text" class="form-control @error('school') is-invalid @enderror" name="school" value="{{ old('school') }}" required autocomplete="school" autofocus> --}}
 
                                 @error('school')
                                     <span class="invalid-feedback" role="alert">
