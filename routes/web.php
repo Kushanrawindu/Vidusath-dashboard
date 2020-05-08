@@ -80,6 +80,8 @@ Route::get('/user/uploads', function () {
     return view('user.upoladedAssignments.index');
 });
 
+Route::get('/lession', 'LessionController@index')->name('lession');
+
 // ==========================================================
 
 Route::resource('/admin/school', 'SchoolController');
@@ -97,3 +99,4 @@ Route::resource('classes', 'ClassController');
 Route::resource('myschool', 'MySchoolController');
 
 Route::resource('subjects', 'SubjectController');
+
