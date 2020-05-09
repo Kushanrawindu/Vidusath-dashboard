@@ -53,6 +53,8 @@ Route::get('/getData/{id}', 'UserHomeController@getData')->name('getData');
 
 Route::get('usergrade/getSubject', 'UserGradeController@getSubject')->name('usergrade.getSubject');
 
+Route::get('/getLession', 'ClassworkController@getLession');
+
 
 Route::get('/', 'UserHomeController@index');
 

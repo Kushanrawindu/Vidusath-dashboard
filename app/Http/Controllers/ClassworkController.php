@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Classwork;
 use App\Grades;
 use App\Classes;
+use DB;
 
 class ClassworkController extends Controller
 {
@@ -21,8 +22,14 @@ class ClassworkController extends Controller
         $grades = Grades::all();
         $classwork = Classwork::all();
         return view('user.classwork.index',compact('classwork','grades','classes'));
-        // ->with('classwork',$classwork);
     }
+
+    //this is for filter subjects
+    // public function getLession()
+    // {
+    //     $grade_list = DB::table('subjects')->groupBy('id')->get();
+    //     return view('user.classwork.index')->with('grade_list', $grade_list);
+    // }
 
     /**
      * Show the form for creating a new resource.

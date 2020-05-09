@@ -24,9 +24,34 @@
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Your School</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input type="text" class="form-control" disabled="disabled" id="school" name="school" value="{{ Auth::user()->school }}" >
+              <select class="form-control" id="school" name="school">
+                  <option value="{{ Auth::user()->school }}">{{ Auth::user()->school }}</option>
+              </select>
             </div>
           </div>
+
+          {{-- <div class="form-group">
+            <select name="grade_id" id="grade_id" class="form-control dynamic" data-dependent="class_id">
+              <option value="">Select Grade</option>
+                @foreach ($grade_list as $grade)
+                    <option value="{{$grade_id->grade_id}}">{{$grade_id->grade_id}}</option>
+                @endforeach
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <select name="class_id" id="class_id" class="form-control dynamic" data-dependent="subject">
+              <option value="">Select Class</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select name="subject" id="subject" class="form-control">
+              <option value="">Select Subject</option>
+            </select>
+          </div> --}}
+
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -271,7 +296,7 @@
                       <th>Action</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  {{-- <tbody>
                     @foreach ($classwork as $classwork)
                     <tr>
                       <th scope="row">{{$classwork->id}}</th>
@@ -295,7 +320,7 @@
                     </tr>
                     @endforeach
                     
-                  </tbody>
+                  </tbody> --}}
                 </table>
             </div>
         </div>
