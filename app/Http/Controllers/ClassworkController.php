@@ -26,12 +26,13 @@ class ClassworkController extends Controller
     }
 
     //this is for filter subjects
-    public function getLession()
+    public function getLession(Request $request)
     {
         $subjects = Subject::where('grade_id','=',$request->input('grade'))->where('class_id','=',$request->input('class'))->get();
 
         $html = '';
 
+        
         foreach($subjects as $subject){
         
 

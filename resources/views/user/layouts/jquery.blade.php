@@ -58,7 +58,7 @@ $('#myDatepicker3').datetimepicker({
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 
 <script type="text/javascript">
-    $(".dynamic").change(function(){
+    $('.dynamic').change(function(){
 
       var grade = $('#grade').val();
       var cls = $('#class').val();
@@ -70,7 +70,7 @@ $('#myDatepicker3').datetimepicker({
               data: {grade:grade,class:cls},
               datatype: "json",
               success:function (data) {
-                $('#subject').html(data.html)
+                $('#subject').html(data.html);
                 // $('#grade_txt').text("GRADE : "+grade);
                 // $('#class_txt').text("Class : "+cls);
               }

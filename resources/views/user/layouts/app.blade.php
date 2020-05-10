@@ -25,6 +25,6 @@
     </div>
 
     @include('user.layouts.jquery')
-    
+    @yield('custom-scripts')
 </body>
 </html>

@@ -56,8 +56,9 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <select class="form-control dynamic" id="grade" name="grade">
+                <option selected="false">--Select Grade--</option>
                 @foreach ($grades as $grades)
-                  <option value="{{$grades->id}}">{{$grades->grade}}</option>
+                  <option value="{{$grades->grade}}">{{$grades->grade}}</option>
                 @endforeach 
               </select>
             </div>
@@ -66,8 +67,9 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Class</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <select class="form-control dynamic" id="class" name="class">
+                <option selected="false">--Select Class--</option>
                 @foreach ($classes as $classes)
-                    <option value="{{$classes->id}}">{{$classes->class}}</option>
+                    <option value="{{$classes->class}}">{{$classes->class}}</option>
                 @endforeach
               </select>
             </div>
@@ -327,4 +329,28 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('custom-scripts')
+
+  <script type="text/javascript">
+    $('#class').change(function(){
+
+      var grade = $('#grade').val();
+      var cls = $('#class').val();
+
+        $.ajax({
+              url:"{{ route('classwork.getLession') }}",
+              method: "get",
+              data: {grade:grade,class:cls},
+              datatype: "json",
+              success:function (data) {
+                $('#subject').html(data.html);
+             
+                // $('#grade_txt').text("GRADE : "+grade);
+                // $('#class_txt').text("Class : "+cls);
+              }
+          });
+    });
+  </script>
 @endsection
