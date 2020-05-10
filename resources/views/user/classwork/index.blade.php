@@ -25,32 +25,14 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Your School</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <select class="form-control" id="school" name="school">
-                  <option value="{{ Auth::user()->school }}">{{ Auth::user()->school }}</option>
+                  {{-- <option value="{{ Auth::user()->school }}">{{ Auth::user()->school }}</option> --}}
+                  <?php $schools = \App\MySchool::all(); ?>
+                    @foreach ($schools as $school)
+                      <option value="{{$school->id}}">{{$school->name}}</option>
+                    @endforeach
               </select>
             </div>
           </div>
-
-          {{-- <div class="form-group">
-            <select name="grade_id" id="grade_id" class="form-control dynamic" data-dependent="class_id">
-              <option value="">Select Grade</option>
-                @foreach ($grade_list as $grade)
-                    <option value="{{$grade_id->grade_id}}">{{$grade_id->grade_id}}</option>
-                @endforeach
-            </select>
-          </div>
-
-
-          <div class="form-group">
-            <select name="class_id" id="class_id" class="form-control dynamic" data-dependent="subject">
-              <option value="">Select Class</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <select name="subject" id="subject" class="form-control">
-              <option value="">Select Subject</option>
-            </select>
-          </div> --}}
 
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
@@ -79,40 +61,6 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Subject</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <select class="select2_group form-control dynamic" id="subject" name="subject">
-
-                {{-- <optgroup label="General">
-                    <option value="Buddhism">Buddhism</option>
-                    <option value="Science">Science</option>
-                    <option value="Sinhala">Sinhala Language</option>
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="History">History</option>
-                    <option value="English">English Language</option>
-                    <option value="Tamil">Tamil Language</option>
-                </optgroup>
-                <optgroup label="Basket Subject 1">
-                    <option value="Civics">Life Skills & Citizenship Education</option>
-                    <option value="Business">Business Education</option>
-                    <option value="Geography">Geography</option>
-                    <option value="SinLit">Sinhala Literature</option>
-                    <option value="EnLit">English Literature</option>
-                </optgroup>
-                <optgroup label="Basket Subject 2">
-                    <option value="Buddhism">Art</option>
-                    <option value="Buddhism">Dancing</option>
-                    <option value="WMusic">Western Music</option>
-                    <option value="EMusic">Eastern Music</option>
-                    <option value="Drama">Drama & Theatre</option>
-                </optgroup>
-                <optgroup label="Basket Subject 3">
-                    <option value="Buddhism">Health & Physical Education</option>
-                    <option value="Tech">Practical & Technical Studies</option>
-                    <option value="Christianity">Christianity</option>
-                    <option value="Shivenary">Shivenary</option>
-                    <option value="Catholic">Catholic</option>
-                    <option value="Islam">Islam</option>
-                    <option value="IT">Information & Communication Technology</option>
-                    <option value="Agri">Agriculture & Food Technology</option>
-                </optgroup> --}}
               </select>
             </div>
           </div>

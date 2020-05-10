@@ -32,7 +32,7 @@ class ClassworkController extends Controller
 
         $html = '';
 
-        
+
         foreach($subjects as $subject){
         
 
@@ -98,8 +98,8 @@ class ClassworkController extends Controller
         $classwork->file = $fileNameToStore;
         $classwork->option = $request->option;
         $classwork->save();
-        dd($request->all());
-        // return redirect(route('classwork.index'));
+        // dd($request->all());
+        return redirect(route('classwork.index'));
     }
 
     /**
