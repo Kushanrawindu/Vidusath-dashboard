@@ -55,7 +55,7 @@
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <select class="form-control" id="grade" name="grade">
+              <select class="form-control dynamic" id="grade" name="grade">
                 @foreach ($grades as $grades)
                   <option value="{{$grades->id}}">{{$grades->grade}}</option>
                 @endforeach 
@@ -65,7 +65,7 @@
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Class</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <select class="form-control" id="class" name="class">
+              <select class="form-control dynamic" id="class" name="class">
                 @foreach ($classes as $classes)
                     <option value="{{$classes->id}}">{{$classes->class}}</option>
                 @endforeach
@@ -76,8 +76,9 @@
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Subject</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <select class="select2_group form-control" id="subject" name="subject">
-                <optgroup label="General">
+              <select class="select2_group form-control dynamic" id="subject" name="subject">
+
+                {{-- <optgroup label="General">
                     <option value="Buddhism">Buddhism</option>
                     <option value="Science">Science</option>
                     <option value="Sinhala">Sinhala Language</option>
@@ -109,7 +110,7 @@
                     <option value="Islam">Islam</option>
                     <option value="IT">Information & Communication Technology</option>
                     <option value="Agri">Agriculture & Food Technology</option>
-                </optgroup>
+                </optgroup> --}}
               </select>
             </div>
           </div>
