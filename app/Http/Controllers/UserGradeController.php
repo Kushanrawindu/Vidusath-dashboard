@@ -43,7 +43,7 @@ class UserGradeController extends Controller
 
             $html .=    "<div class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
             $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
-            $html .=      "<a class='float-right inline mr-2 bluetext subtext' href='#'>".$subject->subject."</a>";        //href='".route('lession')."'
+            $html .=      "<a class='float-right inline mr-2 bluetext subtext sbjID' href='#'  data-subject_id='".$subject->id."'>".$subject->subject."</a>";        //href='".route('lession')."'
             $html .=   "</div>";
         }
 
@@ -69,6 +69,8 @@ class UserGradeController extends Controller
 
         return response()->json(['html' => $html]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.

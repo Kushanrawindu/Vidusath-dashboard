@@ -103,6 +103,8 @@
                         <option value="{{$class->class}}">{{$class->class}}</option>
                         @endforeach
                     </select>
+                    <input type="hidden" name="schName" id="schName" value="{{$data->id}}"/>
+
                    <button type="button" id="go" class="btn yellowblk ml-3 mb-1 cen">Go</button> 
                </form>
               </div>
@@ -286,10 +288,11 @@
 
       var grade = $('#grade').val();
       var cls = $('#class').val();
-      var school = $('#school').val();
-      var subject = $('#subject_view').val();
+      var school = $('#schName').val();
+      //var subject = $('#subject_view').val();
+      var subject = $('.sbjID').data("subject_id")
 
-      alert(grade+cls+subject_view)
+      alert(grade+cls+school+subject)
     });
   </script>
 

@@ -261,7 +261,7 @@
                       <th>Action</th>
                     </tr>
                   </thead>
-                  {{-- <tbody>
+                  <tbody>
                     @foreach ($classwork as $classwork)
                     <tr>
                       <th scope="row">{{$classwork->id}}</th>
@@ -285,7 +285,7 @@
                     </tr>
                     @endforeach
                     
-                  </tbody> --}}
+                  </tbody>
                 </table>
             </div>
         </div>
