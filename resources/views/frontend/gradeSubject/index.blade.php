@@ -75,7 +75,7 @@
     <div class="container">
       <div class="row" style="padding-top: 0px!important">
           <div class="col-lg-12 d-flex flex-column justify-content-center rounded" style="background-color: #e8eaf6;">  
-          <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px">{{$data->name}}</p>   
+          <p class="bluetext cen pt-2 pb-2 m-0" style="font-size: 20px" id="school">{{$data->name}}</p>   
           </div>
       </div>
     </div>
@@ -228,6 +228,10 @@
               </div> --}}
                        
     </div>
+
+    <div class="col-lg-9" id="lession_view">
+
+    </div>
           
         </div>
         
@@ -276,6 +280,19 @@
            });
     });
   </script>
+
+  <script type="text/javascript">
+    $("#subject_view").on("click",function(){
+
+      var grade = $('#grade').val();
+      var cls = $('#class').val();
+      var school = $('#school').val();
+      var subject = $('#subject_view').val();
+
+      alert(grade+cls+subject_view)
+    });
+  </script>
+
 </body>
 
 </html>

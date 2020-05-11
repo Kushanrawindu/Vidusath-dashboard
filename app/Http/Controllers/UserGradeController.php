@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Grades;
 use App\Classes;
 use App\Subject;
+use App\Lession;
+use App\Classwork;
+use App\MySchool;
 
 class UserGradeController extends Controller
 {
@@ -22,6 +25,13 @@ class UserGradeController extends Controller
         return view('frontend.gradeSubject.index', compact('grades', 'classes'));
     }
 
+    public function getData($id)
+    {
+        
+        $data = MySchool::where('id','=', $id)->first();
+        return view('frontend.gradeSubject.index', compact('data'));
+    }
+
     public function getSubject(Request $request)
     {
         $subjects = Subject::where('grade_id','=',$request->input('grade'))->where('class_id','=',$request->input('class'))->get();
@@ -33,7 +43,27 @@ class UserGradeController extends Controller
 
             $html .=    "<div class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
             $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
-            $html .=      "<a class='float-right inline mr-2 bluetext subtext' href='".route('lession')."'>".$subject->subject."</a>";
+            $html .=      "<a class='float-right inline mr-2 bluetext subtext' href='#'>".$subject->subject."</a>";        //href='".route('lession')."'
+            $html .=   "</div>";
+        }
+
+        return response()->json(['html' => $html]);
+    }
+
+
+    // load lessions
+    public function loadLession(Request $request)
+    {
+        $classworks = Classwork::where('school','=',$request->input('school'))->where('grade_id','=',$request->input('grade'))->where('class_id','=',$request->input('class'))->get();
+
+        $html = '';
+
+        foreach($classworks as $classwork){
+        
+
+            $html .=    "<div class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
+            $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
+            $html .=      "<a class='float-right inline mr-2 bluetext subtext' href='#'>".$classwork->title."</a>";
             $html .=   "</div>";
         }
 

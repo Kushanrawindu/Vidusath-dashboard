@@ -193,7 +193,7 @@
                     </div>  
                 </div>
                       
-                <div class="col-lg-9" id="subject_view">
+                <div class="col-lg-9" id="lession_view">
                      {{-- <div class="col-sm-3 inline p-2 ml-5  mb-3  purplebgsub">
                         <img src="{{asset('user/gradeSubject/img/book%20ico.png')}}" class="float-left inline" width="30px">
                          <a class="float-right inline mr-2 bluetext subtext" href="#">Subject</a>

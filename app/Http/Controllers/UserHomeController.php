@@ -29,14 +29,14 @@ class UserHomeController extends Controller
         //$myID = MySchool::where('district_id', $id)->get("id");        
         $myschool = MySchool::where('district_id', $id)->get(['id','name']); 
         return json_encode($myschool);
+        //dd($data->name);
 
     }
 
-    public function getData($id)
-    {
-        // school id eka anuwa eke tyena grades walata ynawa..
-         $data = MySchool::where('id','=', $id)->first();
-         //dd($data->name);
-         return view('frontend.gradeSubject.index', compact('data'));
-    }
+    // public function getData($id)
+    // {
+        
+    //      $data = MySchool::where('id','=', $id)->first();
+    //      return view('frontend.gradeSubject.index', compact('data'));
+    // }
 }

@@ -48,12 +48,16 @@ Route::get('/gradesubject', function () {
 
 
 Route::get('/getSchools/{id}', 'UserHomeController@getSchool')->name('getSchool');
-Route::get('/getData/{id}', 'UserHomeController@getData')->name('getData');
+// Route::get('/getData/{id}', 'UserHomeController@getData')->name('getData');
+
+Route::get('/getData/{id}', 'UserGradeController@getData')->name('getData');
 
 
 Route::get('usergrade/getSubject', 'UserGradeController@getSubject')->name('usergrade.getSubject');
 
 Route::get('/getLession', 'ClassworkController@getLession')->name('classwork.getLession');
+
+Route::get('usergrade/loadLession', 'UserGradeController@loadLession')->name('usergrade.loadLession');
 
 
 Route::get('/', 'UserHomeController@index');

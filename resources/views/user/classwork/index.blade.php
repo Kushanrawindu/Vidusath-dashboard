@@ -35,12 +35,21 @@
           </div>
 
           <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Your Name</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <select class="form-control" id="teacher" name="teacher">
+                  <option value="{{ Auth::user()->id }}">{{ Auth::user()->name }}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Grade</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <select class="form-control dynamic" id="grade" name="grade">
                 <option selected="false">--Select Grade--</option>
                 @foreach ($grades as $grades)
-                  <option value="{{$grades->grade}}">{{$grades->grade}}</option>
+                  <option value="{{$grades->id}}">{{$grades->grade}}</option>
                 @endforeach 
               </select>
             </div>
@@ -51,7 +60,7 @@
               <select class="form-control dynamic" id="class" name="class">
                 <option selected="false">--Select Class--</option>
                 @foreach ($classes as $classes)
-                    <option value="{{$classes->class}}">{{$classes->class}}</option>
+                    <option value="{{$classes->id}}">{{$classes->class}}</option>
                 @endforeach
               </select>
             </div>
@@ -61,6 +70,11 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Select Subject</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <select class="select2_group form-control dynamic" id="subject" name="subject">
+                <option selected="false">--Select Subject--</option>
+                <?php $subjects = \App\Subject::all(); ?>
+                @foreach ($subjects as $subject)
+                    <option value="{{$subject->id}}">{{$subject->subject}}</option>
+                @endforeach
               </select>
             </div>
           </div>
@@ -281,7 +295,7 @@
 
 @section('custom-scripts')
 
-  <script type="text/javascript">
+  {{-- <script type="text/javascript">
     $('#class').change(function(){
 
       var grade = $('#grade').val();
@@ -294,11 +308,8 @@
               datatype: "json",
               success:function (data) {
                 $('#subject').html(data.html);
-             
-                // $('#grade_txt').text("GRADE : "+grade);
-                // $('#class_txt').text("Class : "+cls);
               }
           });
     });
-  </script>
+  </script> --}}
 @endsection

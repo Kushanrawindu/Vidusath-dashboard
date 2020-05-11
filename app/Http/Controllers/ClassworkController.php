@@ -26,21 +26,21 @@ class ClassworkController extends Controller
     }
 
     //this is for filter subjects
-    public function getLession(Request $request)
-    {
-        $subjects = Subject::where('grade_id','=',$request->input('grade'))->where('class_id','=',$request->input('class'))->get();
+    // public function getLession(Request $request)
+    // {
+    //     $subjects = Subject::where('grade_id','=',$request->input('grade'))->where('class_id','=',$request->input('class'))->get();
 
-        $html = '';
+    //     $html = '';
 
 
-        foreach($subjects as $subject){
+    //     foreach($subjects as $subject){
         
 
-            $html .=    "<option value='".$subject->subject."'>".$subject->subject."</option>";
+    //         $html .=    "<option value='".$subject->subject."'>".$subject->subject."</option>";
             
-        }
-        return response()->json(['html' => $html]);
-    }
+    //     }
+    //     return response()->json(['html' => $html]);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -62,6 +62,7 @@ class ClassworkController extends Controller
     {
         $this->validate($request,[
             'school'=>'required',
+            'teacher'=>'required',
             'subject'=>'required',
             'grade'=>'required',
             'class'=>'required',
@@ -88,6 +89,7 @@ class ClassworkController extends Controller
 
         $classwork = new Classwork();
         $classwork->school = $request->school;
+        $classwork->teacher = $request->teacher;
         $classwork->subject = $request->subject;
         $classwork->grade = $request->grade;
         $classwork->class = $request->class;
