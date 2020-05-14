@@ -224,6 +224,10 @@
               </div>
               
     <div class="col-lg-9" id="subject_view">
+      
+      {{-- <a class="sbjTest" href="#">Subject</a> --}}
+
+
              {{-- <div class="col-sm-3 inline p-2 ml-5  mb-3  purplebgsub">
                 <img src="{{asset('user/gradeSubject/img/book%20ico.png')}}" class="float-left inline" width="30px">
                  <a class="float-right inline mr-2 bluetext subtext" href="#">Subject</a>
@@ -262,6 +266,7 @@
   <script src="{{asset('user/gradeSubject/js/site.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
 
+  {{-- filter subjects by selecting grade and class --}}
   <script type="text/javascript">
     $("#go").on("click",function(){
 
@@ -283,19 +288,41 @@
     });
   </script>
 
+  {{-- filter lessons --}}
   <script type="text/javascript">
-    $("#subject_view").on("click",function(){
-
+    //$(".sbjTest").click(function() {
+    $(document.body).on('click', '#lnkViews' ,function(){
+      var $this = $(this);
+      
       var grade = $('#grade').val();
       var cls = $('#class').val();
       var school = $('#schName').val();
       //var subject = $('#subject_view').val();
-      var subject = $('.sbjID').data("subject_id")
+      var subject = $this.data('tagid')
 
-      alert(grade+cls+school+subject)
+      //alert(subject)
+
+     //alert(grade+cls+school+subject)
+
+            $.ajax({
+              url:"{{route('usergrade.loadLession')}}",
+              method: "get",
+              contentType: "application/json", 
+              datatype: "json",
+              data: {grade:grade,class:cls,school:school,subject:subject},
+              success:function (data) {
+                
+                 $('#subject_view').html(data.html);
+              }
+           });
     });
   </script>
 
+  {{-- get content of lessons --}}
+  <script type="text/javascript">
+    $(document.body).on('click', '#lnkViews' ,function(){
+      
+    });
+  </script>
 </body>
-
 </html>

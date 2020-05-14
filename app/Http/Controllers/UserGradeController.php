@@ -41,9 +41,9 @@ class UserGradeController extends Controller
         foreach($subjects as $subject){
         
 
-            $html .=    "<div class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
+            $html .=    "<div id='lnkViews' data-tagid='".$subject->id."' class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
             $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
-            $html .=      "<a class='float-right inline mr-2 bluetext subtext sbjID' href='#'  data-subject_id='".$subject->id."'>".$subject->subject."</a>";        //href='".route('lession')."'
+            $html .=      "<a  class='float-right inline mr-2 bluetext subtext sbjID'  data-subject_id='".$subject->id."'>".$subject->subject."</a>";        //href='".route('usergrade.loadLession')."'
             $html .=   "</div>";
         }
 
@@ -54,23 +54,44 @@ class UserGradeController extends Controller
     // load lessions
     public function loadLession(Request $request)
     {
-        $classworks = Classwork::where('school','=',$request->input('school'))->where('grade_id','=',$request->input('grade'))->where('class_id','=',$request->input('class'))->get();
+        $classworks = Classwork::where('school','=',$request->input('school'))->where('subject','=',$request->input('subject'))->get();             //->where('grade','=',$request->input('grade'))->where('class','=',$request->input('class'))
 
         $html = '';
+
+            //echo "<pre>", print_r($classworks)."</pre>";
 
         foreach($classworks as $classwork){
         
 
-            $html .=    "<div class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
+            $html .=    "<div id='lnkViews' data-tagid='".$subject->id."' class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
             $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
-            $html .=      "<a class='float-right inline mr-2 bluetext subtext' href='#'>".$classwork->title."</a>";
+            $html .=      "<a class='float-right inline mr-2 bluetext subtext'>".$classwork->title."</a>";
             $html .=   "</div>";
         }
 
         return response()->json(['html' => $html]);
     }
 
+    //view subject content
+    public function getContent(Request $request)
+    {
+        $classworks = Classwork::where('school','=',$request->input('school'))->where('subject','=',$request->input('subject'))->get();             //->where('grade','=',$request->input('grade'))->where('class','=',$request->input('class'))
 
+        $html = '';
+
+            //echo "<pre>", print_r($classworks)."</pre>";
+
+        foreach($classworks as $classwork){
+        
+
+            $html .=    "<div class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
+            $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
+            $html .=      "<a class='float-right inline mr-2 bluetext subtext'>".$classwork->title."</a>";
+            $html .=   "</div>";
+        }
+
+        return response()->json(['html' => $html]);
+    }
 
     /**
      * Show the form for creating a new resource.
