@@ -77,15 +77,33 @@ class UserGradeController extends Controller
 
             
 
-            $html =    "<div id='lessonViews' data-tagid='".$lesson->id."'>";                         // class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'
-
-            $html .=      "<h1>Lession:" .$lesson->title."</h1>";
-            $html .=      "<h6>Date:" .$lesson->date."</h6>";
-            $html .=      "<h6>Time:" .$lesson->time."</h6>";
-            $html .=      "<h3>".$lesson->option."</h3>"; 
-            $html .=      "<p>".$lesson->description."</p>";
-            $html .=      "<img src='".asset('storage/image/'.$lesson->file.'')."'>";
-            $html .=      "</div>";
+            $html =    "<div id='lessonViews' data-tagid='".$lesson->id."' class='lesson-block'>";                         // class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'
+            $html .=    "<ul>";
+            $html .=    "<li>";
+            $html .=    "<span>Subject</span>";
+            $html .=    "<span>".$lesson->subject."</span>";
+            $html .=    "</li>";
+            $html .=    "<li>";
+            $html .=    "<span>Teacher's Name</span>";
+            $html .=    "<span>".$lesson->subject."</span>";
+            $html .=    "</li>";
+            $html .=    "</ul>";
+            $html .=      "<h1>Lession:".$lesson->title."</h1>";
+            $html .=    "<h6>";
+            $html .=    "<i class='bx bx-calendar'></i>";
+            $html .=    "<span>".$lesson->date."</span>";
+            $html .=    "</h6>";
+            $html .=    "<h6>";
+            $html .=    "<i class='bx bx-time'></i>";
+            $html .=    "<span>".$lesson->time."</span>";
+            $html .=    "</h6>";
+            $html .=    "<div class='des'>";
+            $html .=    "<p>".$lesson->description."</p>";
+            $html .=    "</div>";
+            $html .=    "<div class='lesson-img'>";
+            $html .=    "<img src='".asset('storage/image/'.$lesson->file.'')."'>";
+            $html .=    "</div>";
+            $html .=    "</div>";
         
 
         return response()->json(['html' => $html]);

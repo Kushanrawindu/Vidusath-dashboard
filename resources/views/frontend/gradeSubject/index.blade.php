@@ -226,6 +226,40 @@
     
     <div class="col-lg-9" id="subject_view">
 
+{{-- <div id='lessonViews' data-tagid='".$lesson->id."' class='lesson-block'>
+  <ul>
+    <li>
+      <span>Subject</span>
+      <span>Geography</span>
+    </li>
+    <li>
+      <span>Teacher's Name</span>
+      <span>This is a Teacher Name</span>
+    </li>
+  </ul>
+
+
+
+
+  <h1>Lession:" .$lesson->title."</h1>
+  <h6>
+    <i class='bx bx-calendar' ></i>
+    <span>April 07</span>
+  </h6>
+  <h6>
+    <i class='bx bx-time' ></i>
+    08.30AM to 09.30AM
+  </h6>
+
+  <div class="des">
+    <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
+    <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
+  </div>
+
+  <div class="lesson-img">
+    <img src='http://localhost:8000/storage/image/Teacher-Login-_1589180237.jpg' class="img-responsive">
+  </div>
+</div> --}}
              {{-- <div class="col-sm-3 inline p-2 ml-5  mb-3  purplebgsub">
                 <img src="{{asset('user/gradeSubject/img/book%20ico.png')}}" class="float-left inline" width="30px">
                  <a class="float-right inline mr-2 bluetext subtext" href="#">Subject</a>
