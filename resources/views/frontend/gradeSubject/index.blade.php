@@ -224,7 +224,72 @@
         </div>
               
     
-    <div class="col-lg-9" id="subject_view">
+    <div class="col-lg-9" id="subject_view"  >
+      <div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-12 lesson-block'>
+        <ul>
+          <li>
+            <span>Subject</span>
+            <span>Geography</span>
+          </li>
+          <li>
+            <span>Teacher's Name</span>
+            <span>This is a Teacher Name</span>
+          </li>
+        </ul>
+
+        <ul class="lesson-list">
+          <li>
+            <img src={{asset('user/gradeSubject/img/book_icon.png')}} class='float-left inline' width='30px'>
+            <div class="lesson-title">
+              <a class='float-right inline mr-2 bluetext'>This is lesson Title</a>
+              <div>
+                <h6>
+                  <i class='bx bx-calendar'></i>
+                  <span>April 02</span>
+                </h6>
+                <h6>
+                  <i class='bx bx-time'></i>
+                  <span>10.00AM to 13.00PM</span>
+                </h6>
+              </div>
+
+            </div>
+          </li>          <li>
+            <img src={{asset('user/gradeSubject/img/book_icon.png')}} class='float-left inline' width='30px'>
+            <div class="lesson-title">
+              <a class='float-right inline mr-2 bluetext'>This is lesson Title</a>
+              <div>
+                <h6>
+                  <i class='bx bx-calendar'></i>
+                  <span>April 02</span>
+                </h6>
+                <h6>
+                  <i class='bx bx-time'></i>
+                  <span>10.00AM to 13.00PM</span>
+                </h6>
+              </div>
+
+            </div>
+          </li>          <li>
+            <img src={{asset('user/gradeSubject/img/book_icon.png')}} class='float-left inline' width='30px'>
+            <div class="lesson-title">
+              <a class='float-right inline mr-2 bluetext'>This is lesson Title</a>
+              <div>
+                <h6>
+                  <i class='bx bx-calendar'></i>
+                  <span>April 02</span>
+                </h6>
+                <h6>
+                  <i class='bx bx-time'></i>
+                  <span>10.00AM to 13.00PM</span>
+                </h6>
+              </div>
+
+            </div>
+          </li>
+        </ul>
+
+      </div>
 
 {{-- <div id='lessonViews' data-tagid='".$lesson->id."' class='lesson-block'>
   <ul>
