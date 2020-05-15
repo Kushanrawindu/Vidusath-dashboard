@@ -77,13 +77,12 @@ class UserGradeController extends Controller
 
             
 
-            $html =    "<div id='lessonViews' data-tagid='".$lesson->description."'>";                         // class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'
+            $html =    "<div id='lessonViews' data-tagid='".$lesson->id."'>";                         // class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'
 
             $html .=      "<h1>Lession:" .$lesson->title."</h1>";
-            //$html .=      "<h3>Date: ".$lession->option."</h3>"; 
-            //$html .=         "<img src="{{ asset($post->image) }}" />";
+            $html .=      "<h3>".$lesson->option."</h3>"; 
             $html .=      "<p>".$lesson->description."</p>";
-            $html .=    "<img src='".asset($lesson->file)."'>";
+            $html .=    "<img src='".asset('storage/app/public/image/'.$lesson->file.'')."'>";
             $html .=   "</div>";
         
 

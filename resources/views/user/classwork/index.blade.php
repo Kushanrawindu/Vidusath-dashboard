@@ -217,9 +217,9 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Choose Option</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <select class="form-control" id="option" name="option">
-                <option>Class Work</option>
-                <option>Home Work</option>
-                <option>Assignment</option>
+                <option value="classwork">Class Work</option>
+                <option value="homework">Home Work</option>
+                <option value="assignment">Assignment</option>
               </select>
             </div>
           </div>
