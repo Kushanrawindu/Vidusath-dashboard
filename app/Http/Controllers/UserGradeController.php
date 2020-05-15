@@ -75,9 +75,15 @@ class UserGradeController extends Controller
     {
             $lesson = Classwork::findOrFail($request->input('id'));
 
-            $html =    "<div id='lessonViews' data-tagid='".$lesson->description."' class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
-            //$html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
-            $html .=      "<a class='float-right inline mr-2 bluetext subtext'>".$lesson->description."</a>";
+            
+
+            $html =    "<div id='lessonViews' data-tagid='".$lesson->description."'>";                         // class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'
+
+            $html .=      "<h1>Lession:" .$lesson->title."</h1>";
+            //$html .=      "<h3>Date: ".$lession->option."</h3>"; 
+            //$html .=         "<img src="{{ asset($post->image) }}" />";
+            $html .=      "<p>".$lesson->description."</p>";
+            $html .=    "<img src='".asset($lesson->file)."'>";
             $html .=   "</div>";
         
 
