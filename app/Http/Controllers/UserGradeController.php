@@ -58,12 +58,10 @@ class UserGradeController extends Controller
 
         $html = '';
 
-            //echo "<pre>", print_r($classworks)."</pre>";
-
         foreach($classworks as $classwork){
         
 
-            $html .=    "<div id='lnkViews' data-tagid='".$subject->id."' class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
+            $html .=    "<div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";                 //id='lnkViews' data-tagid='".$subject->id."'
             $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
             $html .=      "<a class='float-right inline mr-2 bluetext subtext'>".$classwork->title."</a>";
             $html .=   "</div>";
@@ -75,20 +73,13 @@ class UserGradeController extends Controller
     //view subject content
     public function getContent(Request $request)
     {
-        $classworks = Classwork::where('school','=',$request->input('school'))->where('subject','=',$request->input('subject'))->get();             //->where('grade','=',$request->input('grade'))->where('class','=',$request->input('class'))
+            $lesson = Classwork::findOrFail($request->input('id'));
 
-        $html = '';
-
-            //echo "<pre>", print_r($classworks)."</pre>";
-
-        foreach($classworks as $classwork){
-        
-
-            $html .=    "<div class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
-            $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
-            $html .=      "<a class='float-right inline mr-2 bluetext subtext'>".$classwork->title."</a>";
+            $html =    "<div id='lessonViews' data-tagid='".$lesson->description."' class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";
+            //$html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
+            $html .=      "<a class='float-right inline mr-2 bluetext subtext'>".$lesson->description."</a>";
             $html .=   "</div>";
-        }
+        
 
         return response()->json(['html' => $html]);
     }

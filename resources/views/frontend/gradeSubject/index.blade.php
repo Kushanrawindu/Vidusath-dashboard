@@ -221,22 +221,16 @@
                 </table>
 					
             </div>  
-              </div>
+        </div>
               
+    
     <div class="col-lg-9" id="subject_view">
-      
-      {{-- <a class="sbjTest" href="#">Subject</a> --}}
-
 
              {{-- <div class="col-sm-3 inline p-2 ml-5  mb-3  purplebgsub">
                 <img src="{{asset('user/gradeSubject/img/book%20ico.png')}}" class="float-left inline" width="30px">
                  <a class="float-right inline mr-2 bluetext subtext" href="#">Subject</a>
               </div> --}}
                        
-    </div>
-
-    <div class="col-lg-9" id="lession_view">
-
     </div>
           
         </div>
@@ -320,8 +314,25 @@
 
   {{-- get content of lessons --}}
   <script type="text/javascript">
-    $(document.body).on('click', '#lnkViews' ,function(){
+    $(document.body).on('click', '#lessonViews' ,function(){
+      var $this = $(this);
       
+    
+      //var subject = $this.data('tagid')
+      var description = $this.data('tagid')
+      
+      //alert(description)
+            $.ajax({
+              url:"{{route('usergrade.getContent')}}",
+              method: "get",
+              contentType: "application/json", 
+              datatype: "json",
+              data: {id:description},
+              success:function (data) {
+                $('#subject_view').html(data.html);
+                 
+              }
+           });
     });
   </script>
 </body>

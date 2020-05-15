@@ -59,6 +59,9 @@ Route::get('/getLession', 'ClassworkController@getLession')->name('classwork.get
 
 Route::get('usergrade/loadLession', 'UserGradeController@loadLession')->name('usergrade.loadLession');
 
+Route::get('usergrade/getContent', 'UserGradeController@getContent')->name('usergrade.getContent');
+
+//Route::get('lession/getContent', 'LessionController@getContent')->name('lession.getContent');
 
 Route::get('/', 'UserHomeController@index');
 
