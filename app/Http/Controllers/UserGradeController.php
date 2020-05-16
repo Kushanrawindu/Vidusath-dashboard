@@ -72,25 +72,21 @@ class UserGradeController extends Controller
             $html .=    "<img src='".asset('user/gradeSubject/img/book_icon.png')."' class='float-left inline' width='30px'>";
             $html .=    "<div class='lesson-title'>";
             $html .=    "<a class='float-right inline mr-2 bluetext subtext'>".$classwork->title."</a>";
+            $html  .=      "<div>";
+            $html .=     "<h6>";
+            $html .=    "<i class='bx bx-calendar'></i>";
+            $html .=    "<span>".$classwork->date."</span>";
+            $html .=     "</h6>";
+            $html .=     "<h6>";
+            $html .=    "<i class='bx bx-time'></i>";
+            $html .=    "<span>".$classwork->time."</span>";
+            $html .=     "</h6>";
+            $html  .=     "</div>";
             $html .=    "</div>";
             $html .=    "</li>";
             $html .=    "</ul>";
             $html .=    "</div>";
 
-
-            // $html  =     "<div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-12 lesson-block'>";
-            // $html .=    "<ul class='lesson-list'>";
-            // $html .=    "<li>";
-            // $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
-            // $html .=    "<div class='lesson-title'>";
-            // $html .=    "<a class='float-right inline mr-2 bluetext'>".$classwork->title."</a>";
-            // $html .=    "</div>";
-
-
-            // $html .=    "</li>";
-            
-            // $html .=    "</ul>";
-            // $html .=   "</div>";
         }
 
         return response()->json(['html' => $html]);
