@@ -61,10 +61,36 @@ class UserGradeController extends Controller
         foreach($classworks as $classwork){
         
 
-            $html .=    "<div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'>";                 //id='lnkViews' data-tagid='".$subject->id."'
-            $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
-            $html .=      "<a class='float-right inline mr-2 bluetext subtext'>".$classwork->title."</a>";
-            $html .=   "</div>";
+            // $html .=    "<div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-9 inline p-2 ml-5  mb-3  purplebgsub'>";                 //id='lnkViews' data-tagid='".$subject->id."'
+            // $html .=    "<img src='".asset('user/gradeSubject/img/book_icon.png')."' class='float-left inline' width='30px'>";
+            // $html .=      "<a class='float-right inline mr-2 bluetext subtext'>".$classwork->title."</a>";
+            // $html .=   "</div>";
+
+            $html .=    "<div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-9 inline p-2 ml-5  mb-3  lesson-block'>";
+            $html .=    "<ul class='lesson-list'>";
+            $html .=    "<li>";
+            $html .=    "<img src='".asset('user/gradeSubject/img/book_icon.png')."' class='float-left inline' width='30px'>";
+            $html .=    "<div class='lesson-title'>";
+            $html .=    "<a class='float-right inline mr-2 bluetext subtext'>".$classwork->title."</a>";
+            $html .=    "</div>";
+            $html .=    "</li>";
+            $html .=    "</ul>";
+            $html .=    "</div>";
+
+
+            // $html  =     "<div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-12 lesson-block'>";
+            // $html .=    "<ul class='lesson-list'>";
+            // $html .=    "<li>";
+            // $html .=    "<img src='".asset('user/gradeSubject/img/book%20ico.png')."' class='float-left inline' width='30px'>";
+            // $html .=    "<div class='lesson-title'>";
+            // $html .=    "<a class='float-right inline mr-2 bluetext'>".$classwork->title."</a>";
+            // $html .=    "</div>";
+
+
+            // $html .=    "</li>";
+            
+            // $html .=    "</ul>";
+            // $html .=   "</div>";
         }
 
         return response()->json(['html' => $html]);

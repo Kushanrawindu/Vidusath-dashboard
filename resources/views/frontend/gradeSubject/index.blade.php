@@ -225,7 +225,7 @@
               
     
     <div class="col-lg-9" id="subject_view"  >
-      <div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-12 lesson-block'>
+      {{-- <div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-12 lesson-block'>
         <ul>
           <li>
             <span>Subject</span>
@@ -289,7 +289,7 @@
           </li>
         </ul>
 
-      </div>
+      </div> --}}
 
 {{-- <div id='lessonViews' data-tagid='".$lesson->id."' class='lesson-block'>
   <ul>
