@@ -29,6 +29,7 @@
   <link href="{{asset('user/gradeSubject/assets/css/style.css')}}" rel="stylesheet">
   <!--Calender-->
   <link rel="stylesheet" href="{{asset('user/gradeSubject/css/clndr.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{asset('user/gradeSubject/css/javascript-calendar.css')}}" />
   <script src="{{asset('user/gradeSubject/js/underscore-min.js')}}"></script>
   <script src="{{asset('user/gradeSubject/js/moment-2.2.1.js')}}"></script>
   <script src="{{asset('user/gradeSubject/js/clndr.js')}}"></script>
@@ -126,7 +127,34 @@
           
           <div class="row pt-5">
         <div class="col-lg-3 p-0">
-            <div class="col-lg-12 p-0 bor rounded purplebg lh-0">
+          <div class="icalendar">
+            <div class="icalendar__month">
+              <div class="icalendar__prev" onclick="moveDate('prev')">
+                <span>&#10094</span>
+              </div>
+              <div class="icalendar__current-">                                 
+                <h2 id="icalendarMonth"></h2>
+                <div>
+                  <div id="icalendarDateStr"></div>
+                </div>
+              </div>
+              <div class="icalendar__next" onclick="moveDate('next')">
+                <span>&#10095</span>
+              </div>
+            </div>
+            <div class="icalendar__week-days">
+              <!-- Localize names of the days of the week -->
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="icalendar__days"></div>
+          </div>
+            {{-- <div class="col-lg-12 p-0 bor rounded purplebg lh-0">
            <p class="bluetext pl-3 pr-3 pt-3 ml-2 mr-2 mt-2 pb-2 mb-0 cen bgwhite bluetext fsize">Calander</p> 
            <p class="bluetext pl-1 pr-1 pt-1 ml-2 mr-2 pb-2 mb-0 cen bgwhite fsize2">Select the date and get class work</p> 
 					<div class="column_right_grid calender p-1 bgwhite borrad">
@@ -136,7 +164,7 @@
                             <div class="clndr-control-button">
                               <p class="clndr-previous-button">previous</p>
                             </div>
-                            <div class="month pt-0">September 2015</div>
+                            <div class="month pt-0">May 2020</div>
                             <div class="clndr-control-button rightalign">
                               <p class="clndr-next-button">next</p>
                             </div>
@@ -198,7 +226,7 @@
                                 </td>
                                 <td class="day past event calendar-day-2015-09-12"><div class="day-contents">12</div></td></tr><tr><td class="day past event calendar-day-2015-09-13"><div class="day-contents">13</div></td><td class="day past event calendar-day-2015-09-14"><div class="day-contents">14</div></td><td class="day past calendar-day-2015-09-15"><div class="day-contents">15</div></td><td class="day past calendar-day-2015-09-16"><div class="day-contents">16</div></td><td class="day past calendar-day-2015-09-17"><div class="day-contents">17</div></td><td class="day past calendar-day-2015-09-18"><div class="day-contents">18</div></td><td class="day past calendar-day-2015-09-19"><div class="day-contents">19</div></td></tr><tr><td class="day past calendar-day-2015-09-20"><div class="day-contents">20</div></td><td class="day past event calendar-day-2015-09-21"><div class="day-contents">21</div></td><td class="day past event calendar-day-2015-09-22"><div class="day-contents">22</div></td><td class="day past event calendar-day-2015-09-23"><div class="day-contents">23</div></td><td class="day past calendar-day-2015-09-24"><div class="day-contents">24</div></td><td class="day past calendar-day-2015-09-25"><div class="day-contents">25</div></td><td class="day today calendar-day-2015-09-26"><div class="day-contents">26</div></td></tr><tr><td class="day calendar-day-2015-09-27"><div class="day-contents">27</div></td><td class="day calendar-day-2015-09-28"><div class="day-contents">28</div></td><td class="day calendar-day-2015-09-29"><div class="day-contents">29</div></td><td class="day calendar-day-2015-09-30"><div class="day-contents">30</div></td><td class="day adjacent-month next-month calendar-day-2015-10-01"><div class="day-contents">1</div></td><td class="day adjacent-month next-month calendar-day-2015-10-02"><div class="day-contents">2</div></td><td class="day adjacent-month next-month calendar-day-2015-10-03"><div class="day-contents">3</div></td></tr></tbody></table></div></div>
 				    </div>
-            </div>
+            </div> --}}
               
             <div class="col-lg-12 p-0 mt-3 bor rounded purplebg lh-0 cen">
            <p class="bluetext pl-3 pr-3 pt-3 ml-2 mr-2 mt-2 pb-2 mb-0 cen bgwhite blacktext fsize">Time Table</p>
@@ -224,112 +252,7 @@
         </div>
               
     
-    <div class="col-lg-9" id="subject_view"  >
-      {{-- <div id='lessonViews' data-tagid='".$classwork->id."' class='col-sm-12 lesson-block'>
-        <ul>
-          <li>
-            <span>Subject</span>
-            <span>Geography</span>
-          </li>
-          <li>
-            <span>Teacher's Name</span>
-            <span>This is a Teacher Name</span>
-          </li>
-        </ul>
-
-        <ul class="lesson-list">
-          <li>
-            <img src={{asset('user/gradeSubject/img/book_icon.png')}} class='float-left inline' width='30px'>
-            <div class="lesson-title">
-              <a class='float-right inline mr-2 bluetext'>This is lesson Title</a>
-              <div>
-                <h6>
-                  <i class='bx bx-calendar'></i>
-                  <span>April 02</span>
-                </h6>
-                <h6>
-                  <i class='bx bx-time'></i>
-                  <span>10.00AM to 13.00PM</span>
-                </h6>
-              </div>
-
-            </div>
-          </li>          <li>
-            <img src={{asset('user/gradeSubject/img/book_icon.png')}} class='float-left inline' width='30px'>
-            <div class="lesson-title">
-              <a class='float-right inline mr-2 bluetext'>This is lesson Title</a>
-              <div>
-                <h6>
-                  <i class='bx bx-calendar'></i>
-                  <span>April 02</span>
-                </h6>
-                <h6>
-                  <i class='bx bx-time'></i>
-                  <span>10.00AM to 13.00PM</span>
-                </h6>
-              </div>
-
-            </div>
-          </li>          <li>
-            <img src={{asset('user/gradeSubject/img/book_icon.png')}} class='float-left inline' width='30px'>
-            <div class="lesson-title">
-              <a class='float-right inline mr-2 bluetext'>This is lesson Title</a>
-              <div>
-                <h6>
-                  <i class='bx bx-calendar'></i>
-                  <span>April 02</span>
-                </h6>
-                <h6>
-                  <i class='bx bx-time'></i>
-                  <span>10.00AM to 13.00PM</span>
-                </h6>
-              </div>
-
-            </div>
-          </li>
-        </ul>
-
-      </div> --}}
-
-{{-- <div id='lessonViews' data-tagid='".$lesson->id."' class='lesson-block'>
-  <ul>
-    <li>
-      <span>Subject</span>
-      <span>Geography</span>
-    </li>
-    <li>
-      <span>Teacher's Name</span>
-      <span>This is a Teacher Name</span>
-    </li>
-  </ul>
-
-
-
-
-  <h1>Lession:" .$lesson->title."</h1>
-  <h6>
-    <i class='bx bx-calendar' ></i>
-    <span>April 07</span>
-  </h6>
-  <h6>
-    <i class='bx bx-time' ></i>
-    08.30AM to 09.30AM
-  </h6>
-
-  <div class="des">
-    <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
-    <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
-  </div>
-
-  <div class="lesson-img">
-    <img src='http://localhost:8000/storage/image/Teacher-Login-_1589180237.jpg' class="img-responsive">
-  </div>
-</div> --}}
-             {{-- <div class="col-sm-3 inline p-2 ml-5  mb-3  purplebgsub">
-                <img src="{{asset('user/gradeSubject/img/book%20ico.png')}}" class="float-left inline" width="30px">
-                 <a class="float-right inline mr-2 bluetext subtext" href="#">Subject</a>
-              </div> --}}
-                       
+    <div class="col-lg-9" id="subject_view"  >                     
     </div>
           
         </div>
@@ -358,6 +281,10 @@
   <script src="{{asset('user/gradeSubject/js/clndr.js')}}"></script>
   <script src="{{asset('user/gradeSubject/js/site.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-slim@3.0.0/dist/jquery.slim.min.js"></script>
+
+  <script src="{{asset('user/gradeSubject/js/javascript-calendar.js')}}"></script>
+
 
   {{-- filter subjects by selecting grade and class --}}
   <script type="text/javascript">
