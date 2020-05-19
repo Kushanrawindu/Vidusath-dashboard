@@ -34,7 +34,7 @@
           </div></div></div>
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up">
-          <img src="{{asset('user/img/Student%201.png')}}" class="img-fluid" alt="">
+          <img src="{{asset('user/img/home_child.png')}}" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" style="padding: 60px!important;">
             <div>
@@ -171,6 +171,28 @@
         </div>
       
 </section>  
+
+<section id="contact" class="contat">
+  <div class="container">
+    <div class="row" style="height: 350px;">
+        <div class="col-md-6" style="background-color: #e8eaf6;height: 251px;">
+            <div class="intro">
+                <h2 class="text-right d-lg-flex justify-content-lg-end" style="color: #2f3382;font-family: 'Alegreya Sans SC', sans-serif;margin: 31px;padding: -21px;height: 7px;">If you have any questions?</h2>
+                <h2 class="text-right d-lg-flex justify-content-lg-end" style="color: #2f3382;margin: 36px;font-size: 43px;height: 30px;">PLEASE CALL US</h2>
+                <h2 class="display-1 text-right d-lg-flex justify-content-lg-end align-items-lg-start" style="color: #2f3382;font-family: 'Alegreya Sans SC', sans-serif;font-size: 40px;margin: 35px;height: 41px;">071 747 1560</h2>
+            </div>
+        </div>
+        <div class="col-md-6" style="height: 350px;">
+            <form method="post">
+                <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required=""></div>
+                <div class="form-group"><textarea class="form-control" name="message" placeholder="Message" rows="14" style="height: 134px;"></textarea></div>
+                <div class="form-group" style="width: 400px;"><button class="btn btn-primary" type="submit" style="width: 540px;background-color: #ffc928;color: rgb(0,0,0);font-size: 18px;font-family: 'Alegreya Sans SC', sans-serif;">Submit</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+</section>
    
 
   </main><!-- End #main -->
