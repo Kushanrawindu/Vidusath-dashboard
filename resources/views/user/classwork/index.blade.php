@@ -208,7 +208,7 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="btn-group">
                 <a class="btn" id="pictureBtn"></a>
-                <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" name="file" />
+                <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" name="file" multiple />
               </div>
             </div>
           </div>

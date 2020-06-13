@@ -70,13 +70,17 @@ class ClassworkController extends Controller
             'description'=>'required',
             'date'=>'required',
             'time'=>'required',
-            'file'=>'required',
-            'file.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'file'=>'required|mimes:jpeg,png,jpg,zip,pdf,doc,docx|max:10000',
+            //'file.*' => 'required|mimes:jpeg,png,jpg,zip,pdf|max:2048',
             'option'=>'required'
         ]);
 
         //handle file upload
         if($request->hasFile('file')){
+            // foreach($request->file as $filename)
+            // {
+            //     //your saving code
+            // }
             $filenameWithExt = $request->file('file')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('file')->getClientOriginalExtension();
