@@ -100,16 +100,16 @@ class UserGradeController extends Controller
             
 
             $html =    "<div id='lessonViews' data-tagid='".$lesson->id."' class='lesson-block'>";                         // class='col-sm-3 inline p-2 ml-5  mb-3  purplebgsub'
-            $html .=    "<ul>";
-            $html .=    "<li>";
-            $html .=    "<span>Subject</span>";
-            $html .=    "<span>".$lesson->subject."</span>";
-            $html .=    "</li>";
-            $html .=    "<li>";
-            $html .=    "<span>Teacher's Name</span>";
-            $html .=    "<span>".$lesson->subject."</span>";
-            $html .=    "</li>";
-            $html .=    "</ul>";
+            //$html .=    "<ul>";
+            //$html .=    "<li>";
+            //$html .=    "<span>Subject</span>";
+            //$html .=    "<span>".$lesson->subject."</span>";
+            //$html .=    "</li>";
+            //$html .=    "<li>";
+            //$html .=    "<span>Teacher's Name</span>";
+            //$html .=    "<span>".$lesson->subject."</span>";
+            //$html .=    "</li>";
+            //$html .=    "</ul>";
             $html .=      "<h1>Lession:".$lesson->title."</h1>";
             $html .=    "<h6>";
             $html .=    "<i class='bx bx-calendar'></i>";
