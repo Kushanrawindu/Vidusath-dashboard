@@ -90,14 +90,14 @@
            <div class="col-lg-12 cen">
                <form>
                <p class="inline mb-1 cen ml-3">Select your class</p>
-                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="grade" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="grade" data-activates="menu1" type="button" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>        // data-toggle="dropdown"
                       <option selected="false">--Select Grade--</option>
                       <?php $grades = \App\Grades::all(); ?>
                       @foreach($grades as $grade)
                         <option value="{{$grade->grade}}">{{$grade->grade}}</option>
                       @endforeach
                     </select>
-                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="class" data-activates="menu1" type="button" data-toggle="dropdown" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
+                    <select class="btn btn-light btn-sm dropdown-toggle text-left p-1 district" name="district" id="class" data-activates="menu1" type="button" style="border-radius: 15px;width: 250px;font-size: 12px;margin-bottom: 5px"><span class="caret"></span>
                       <option selected="false">--Select Class--</option>
                         <?php $classes = \App\Classes::all(); ?>
                         @foreach ($classes as $class)
@@ -290,7 +290,7 @@
   <script src="{{asset('user/gradeSubject/js/clndr.js')}}"></script>
   <script src="{{asset('user/gradeSubject/js/site.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-slim@3.0.0/dist/jquery.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
   <script src="{{asset('user/gradeSubject/js/javascript-calendar.js')}}"></script>
 
