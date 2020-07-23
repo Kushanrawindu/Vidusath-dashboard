@@ -126,7 +126,7 @@ class UserGradeController extends Controller
             $html .=    "<img class='img-responsive' src='".asset('storage/image/'.$lesson->file.'')."'>";
             $html .=    "</div>";
             $html .=    "<div class='btn-download'>";
-            $html .=    "<button type='submit' class='btn yellowcol cen bluetext'>Download</button>";
+            $html .=    "<a href='storage/image/'.$lesson->file.'' download='.$lesson->file.' class='btn yellowcol cen bluetext'>Download</a>";
             $html .=    "</div>";
             $html .=    "</div>";
         
